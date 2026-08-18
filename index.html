@@ -1,454 +1,530 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>박광현 ♥ 윤에스더 | Wedding Invitation</title>
-<meta name="description" content="2026년 12월 5일 토요일 오전 11시, KU컨벤션웨딩홀에서 박광현과 윤에스더가 결혼합니다.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>박광현 · 윤에스더 결혼합니다</title>
+<meta name="description" content="2026년 12월 5일 토요일 오전 11시, KU 웨딩홀에서 박광현과 윤에스더가 결혼합니다.">
 <style>
-:root{--paper:#f7f5ef;--ink:#1d211d;--muted:#72776f;--green:#30473a;--soft:#eceee7;--line:rgba(29,33,29,.16);}
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
+
+:root{
+  --paper:#f6f2e9;
+  --paper2:#fbfaf6;
+  --ink:#2a2c29;
+  --muted:#777a74;
+  --green:#314438;
+  --red:#9e463f;
+  --line:rgba(40,45,40,.15);
+  --shadow:0 12px 35px rgba(0,0,0,.08);
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#deddd7;color:var(--ink);font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
-.page{width:min(100%,480px);margin:auto;background:var(--paper);overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.08)}
-.cover{position:relative;height:100svh;min-height:650px;background:#111}
-.cover img{width:100%;height:100%;object-fit:cover;display:block}
-.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.02),rgba(0,0,0,.06) 58%,rgba(0,0,0,.38))}
-.cover-copy{position:absolute;z-index:2;left:0;right:0;bottom:42px;color:white;text-align:center;padding:0 25px}
-.eyebrow,.kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase}
-.cover h1,.section-title,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
-.cover h1{font-size:33px;margin:10px 0 9px}
-.cover p{font-size:13px;letter-spacing:.08em;margin:4px 0}
-.scroll{font-size:9px;letter-spacing:.22em;margin-top:24px}
-section{padding:88px 27px}
-.center{text-align:center}
-.section-title{font-size:30px;letter-spacing:.055em;margin:10px 0 20px}
-.copy{font-size:14px;line-height:2;color:#4e544e}
-.rule{height:62px;width:1px;background:var(--line);margin:34px auto}
-.names{display:flex;justify-content:center;gap:18px;align-items:center;margin-top:34px;font-family:Georgia,"Times New Roman",serif;font-size:18px}
-.parents{font-size:12px;color:#666;line-height:2;margin-top:28px}
-.parents .pending{color:#a19f98}
-.moments{padding-left:0;padding-right:0}
-.moments-head{text-align:center;padding:0 30px 48px}
-.editorial{display:flex;flex-direction:column;gap:72px;padding:0 18px}
-.shot{margin:0}
-.shot img{width:100%;height:auto;display:block}
-.shot.left{width:78%;align-self:flex-start}
-.shot.right{width:67%;align-self:flex-end}
-.shot.center{width:88%;align-self:center}
-.shot.small{width:56%}
-.caption{margin-top:9px;color:#85877f;font:11px Georgia,"Times New Roman",serif;letter-spacing:.09em}
-.quote{width:74%;align-self:center;text-align:center;font:italic 22px/1.55 Georgia,"Times New Roman",serif;color:#455449}
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:100%}
-.triptych img{width:100%;aspect-ratio:1/1.14;object-fit:cover}
-.white-series{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.white-series img{width:100%;display:block}
-.white-series img:last-child{grid-column:1/-1}
-
-.story{background:#f3f0e9;padding-left:22px;padding-right:22px}
-.story-intro{text-align:center;margin-bottom:54px}
-.storyline{position:relative;padding:0 4px}
-.storyline:before{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:1px;background:var(--line)}
-.story-item{position:relative;width:100%;margin:0 0 68px;display:flex}
-.story-item:nth-child(odd){justify-content:flex-start}
-.story-item:nth-child(even){justify-content:flex-end}
-.story-card{width:72%;position:relative}
-.story-card img{width:100%;display:block}
-.story-date{font:18px Georgia,"Times New Roman",serif;margin:10px 0 5px;letter-spacing:.04em}
-.story-text{font-size:12px;line-height:1.7;color:#626760}
-.story-dot{position:absolute;left:50%;top:17%;width:9px;height:9px;border-radius:50%;background:var(--green);transform:translateX(-50%);box-shadow:0 0 0 5px #f3f0e9}
-.story-final{text-align:center;padding-top:10px}
-.story-final .serif{font-size:28px;margin:8px 0}
-.guestbook{background:#fff}
-.guestbook-form{margin-top:26px;text-align:left}
-.guestbook-form input,.guestbook-form textarea{
- width:100%;border:1px solid var(--line);background:var(--paper);padding:12px;margin:0 0 9px;
- font:12px Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);border-radius:0
-}
-.guestbook-form textarea{min-height:94px;resize:vertical}
-.guestbook-list{margin-top:26px}
-.guestbook-card{border-top:1px solid var(--line);padding:16px 0;text-align:left}
-.guestbook-card strong{font-size:12px}
-.guestbook-card p{font-size:12px;line-height:1.7;color:#5d625d;margin:6px 0}
-.guestbook-card small{font-size:10px;color:#999}
-.music-title{position:fixed;right:66px;bottom:25px;z-index:19;background:rgba(247,245,239,.9);padding:7px 9px;font-size:9px;letter-spacing:.08em;opacity:0;transform:translateX(8px);transition:.25s;pointer-events:none}
-.music-title.show{opacity:1;transform:none}
-
-.day{background:var(--soft)}
-.date-big{font:400 38px Georgia,"Times New Roman",serif;margin:16px 0 7px}
-.calendar{margin:38px auto 0;max-width:360px}
-.cal-head,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-.cal-head div{font-size:9px;letter-spacing:.08em;color:#7d817b;padding:8px 0}
-.cal-cell{min-height:49px;display:flex;align-items:center;justify-content:center;position:relative;font-size:12px}
-.cal-cell.wedding-day span{width:32px;height:32px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center}
-.cal-cell small{position:absolute;bottom:-3px;font-size:6px;letter-spacing:.08em;color:var(--green)}
-.countdown{margin-top:28px;font:22px Georgia,"Times New Roman",serif}
-.countdown small{display:block;font:10px Arial,sans-serif;letter-spacing:.16em;color:#777;margin-top:8px}
-.location-card,.contact-card,.account-card{background:white;border:1px solid var(--line);padding:24px 20px;margin-top:20px;text-align:left}
-.location-card h3,.contact-card h3,.account-card h3{margin:0 0 12px;font-size:15px}
-.location-card p,.contact-card p,.account-card p{font-size:12px;line-height:1.85;color:#555;margin:6px 0}
-.transport{margin-top:24px;text-align:left}
-.transport h4{font-size:12px;letter-spacing:.08em;margin:20px 0 6px}
-.transport p{font-size:12px;line-height:1.75;color:#5d625d;margin:0}
-.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-button,a.button{appearance:none;border:1px solid var(--line);background:var(--paper);padding:10px 12px;font-size:12px;color:var(--ink);text-decoration:none;cursor:pointer;border-radius:0}
-.account-number{font-family:monospace;font-size:14px!important;letter-spacing:.04em}
-.note{font-size:11px!important;color:#868981!important}
-.musicbar{position:fixed;right:16px;bottom:16px;z-index:20}
-.musicbar button{border-radius:50%;width:44px;height:44px;background:rgba(247,245,239,.93);box-shadow:0 3px 16px rgba(0,0,0,.13)}
-.share{background:#303c34;color:white}
-.share .section-title,.share p{color:white}
-.share button{border-color:rgba(255,255,255,.35);background:transparent;color:white}
-.end{padding:0;position:relative;background:#111}
-.end img{width:100%;height:78svh;min-height:560px;object-fit:cover;display:block;filter:brightness(.78)}
-.end-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
-.end-copy div{font:27px/1.45 Georgia,"Times New Roman",serif}
-.fade{opacity:0;transform:translateY(22px);transition:.8s ease}
+body{margin:0;background:#dedbd4;color:var(--ink);font-family:"Noto Sans KR",sans-serif}
+.page{width:min(100%,480px);margin:auto;background:var(--paper2);overflow:hidden;box-shadow:var(--shadow)}
+img{display:block;max-width:100%}
+button,a{font:inherit}
+.kicker{font-size:10px;letter-spacing:.22em;color:var(--muted)}
+.title{font-family:"Gowun Batang",serif;font-weight:700;font-size:28px;letter-spacing:.02em;margin:10px 0 24px}
+.copy{font-family:"Gowun Batang",serif;font-size:14px;line-height:2;color:#555a54}
+.fade{opacity:0;transform:translateY(20px);transition:.75s ease}
 .fade.show{opacity:1;transform:none}
-.toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);background:#222;color:white;padding:10px 14px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+
+/* COVER */
+.cover{background:var(--paper2);display:block}
+.poster{position:relative;width:100%;overflow:hidden;background:var(--paper2)}
+.poster>img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  filter:brightness(1.18) saturate(1.02) contrast(.98)
+}
+.poster:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.015) 58%,rgba(0,0,0,.05));
+  pointer-events:none
+}
+.poster-copy{
+  position:absolute;
+  z-index:2;
+  left:24px;
+  right:24px;
+  top:54px;
+  color:#fff;
+  text-align:center;
+  /* No rectangular overlay: contrast comes only from a soft shadow hugging the letters. */
+  background:transparent;
+  padding:0;
+  border:0;
+  border-radius:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  text-shadow:
+    0 1px 2px rgba(0,0,0,.95),
+    0 2px 6px rgba(0,0,0,.82),
+    0 0 12px rgba(0,0,0,.52)
+}
+.poster-copy .mini{font-size:12px;letter-spacing:.25em;margin-bottom:14px;opacity:1}
+.poster-copy h1{font-family:"Gowun Batang",serif;font-size:32px;line-height:1.32;margin:0 0 15px;font-weight:700;letter-spacing:.025em}
+.poster-copy .names-top{font-family:"Gowun Batang",serif;font-size:16px;line-height:1.78;letter-spacing:.045em;font-weight:700}
+.music-btn{position:absolute;z-index:4;right:18px;top:18px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.62);background:rgba(18,18,18,.34);backdrop-filter:blur(6px);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.12)}
+.music-btn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7}
+.music-btn.playing{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.12)}50%{box-shadow:0 0 0 8px rgba(255,255,255,0)}}
+.cover-open{display:none}
+
+/* INVITATION */
+.section{padding:82px 28px}
+.invitation{text-align:center}
+.invitation .parents{font-size:12px;line-height:2.05;color:#62665f;margin-top:34px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:36px;background:rgba(255,255,255,.46)}
+.quick div{padding:20px 8px;border-right:1px solid var(--line);font-size:11px;line-height:1.7}
+.quick div:last-child{border-right:none}
+.quick .icon{font-size:10px;letter-spacing:.13em;color:var(--red);margin-bottom:8px;font-weight:600}
+.quick strong{display:block;font-weight:500;font-size:12px;margin-bottom:3px}
+
+/* PHOTO EDITORIAL — consolidated to avoid cascade conflicts */
+.moments{padding:82px 0 50px}
+.moments-head{text-align:center;padding:0 28px 42px}
+.magazine{display:flex;flex-direction:column;gap:56px;padding:0 18px 8px}
+
+.hero-shot{width:82%;align-self:flex-start}
+.hero-shot.right{align-self:flex-end}
+.hero-shot.center{width:90%;align-self:center}
+.hero-shot img{width:100%;height:auto;border:7px solid #f8f4eb;box-shadow:0 9px 24px rgba(54,46,37,.07)}
+
+.mag-spread{position:relative;min-height:500px}
+.mag-spread img{position:absolute;object-fit:cover;box-shadow:none;border:7px solid #f7f3ea;background:#f7f3ea}
+.mag-spread .a{left:0;top:0;width:59%;height:66%}
+.mag-spread .b{right:0;top:12%;width:36%;height:38%}
+.mag-spread .c{left:7%;bottom:3%;width:35%;height:29%}
+.mag-spread .d{right:5%;bottom:0;width:49%;height:39%;z-index:3}
+.mag-note{position:absolute;font-family:"Gowun Batang",serif;font-size:12px;line-height:1.7;color:#6f736c;letter-spacing:.04em}
+.mag-note.top{right:0;top:2px;width:36%;text-align:right;font-size:11px;letter-spacing:.08em}
+.mag-note.top:before{content:"OUR MOMENTS — 01";display:block;font-family:Georgia,"Times New Roman",serif;font-size:8px;letter-spacing:.22em;color:#9a8d7c;margin-bottom:10px}
+
+.feature-pair{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;padding:18px 4px 12px;border-top:1px solid #cfc7ba;border-bottom:1px solid #cfc7ba}
+.feature-pair img{width:100%;object-fit:cover;border:6px solid #f8f4eb;box-shadow:0 8px 20px rgba(62,51,39,.07)}
+.feature-pair img:first-child{aspect-ratio:.86/1}
+.feature-pair img:last-child{aspect-ratio:.72/1;margin-top:58px}
+
+.strip3{position:relative;display:grid;grid-template-columns:.9fr 1.22fr .9fr;gap:8px;align-items:end;padding:28px 8px 22px;background:#e9e4da;border:1px solid #d9d1c4}
+.strip3:before{content:"03  /  TOGETHER";position:absolute;left:12px;top:9px;font:8px Georgia,"Times New Roman",serif;letter-spacing:.17em;color:#766f64}
+.strip3 img{width:100%;object-fit:cover;border:5px solid #f8f5ee;box-shadow:0 5px 14px rgba(52,45,36,.08)}
+.strip3 img:nth-child(1){aspect-ratio:.82/1;transform:rotate(-1.1deg)}
+.strip3 img:nth-child(2){aspect-ratio:.78/1;height:auto;transform:translateY(5px)}
+.strip3 img:nth-child(3){aspect-ratio:.82/1;transform:rotate(1deg)}
+
+/* 3919 / 3922 / 3930 — compact overlapping sequence, no crop */
+.sequence-mag{
+  position:relative;
+  width:100%;
+  aspect-ratio:.72 / 1;
+  margin:-4px 0 -8px;
+  padding:0;
+  overflow:visible
+}
+.sequence-mag:after{
+  content:"04  /  OUR DAYS";
+  position:absolute;
+  z-index:8;
+  right:2px;
+  bottom:1px;
+  font:8px Georgia,"Times New Roman",serif;
+  letter-spacing:.2em;
+  color:#8b8173
+}
+.sequence-mag:before{display:none}
+.sequence-story{
+  position:absolute;
+  left:2px;
+  top:0;
+  max-width:62%;
+  font-family:"Gowun Batang",serif;
+  font-size:10.5px;
+  line-height:1.65;
+  color:#6f6a61;
+  z-index:7
+}
+.sequence-mag img{
+  position:absolute;
+  height:auto;
+  object-fit:contain;
+  border:7px solid #f8f4eb;
+  background:#f8f4eb;
+  box-shadow:0 10px 24px rgba(54,46,37,.09)
+}
+.sequence-mag img:nth-of-type(1){
+  left:0;
+  top:7%;
+  width:75%;
+  transform:rotate(-1deg);
+  z-index:1
+}
+.sequence-mag img:nth-of-type(2){
+  right:0;
+  top:40.5%;
+  width:71%;
+  transform:rotate(.8deg);
+  z-index:2
+}
+.sequence-mag img:nth-of-type(3){
+  left:11%;
+  top:70.5%;
+  width:66%;
+  transform:rotate(-.5deg);
+  z-index:3;
+  filter:grayscale(1)
+}
+
+.vow-card{margin:14px auto 0;text-align:center;font-family:"Gowun Batang",serif;font-size:13px;line-height:1.9;color:#565950;letter-spacing:.025em}
+.poster-vow{position:relative;width:94%;align-self:center;margin:0 auto;overflow:hidden;background:#f8f4eb;padding:7px}
+.poster-vow img{width:100%;display:block}
+.poster-vow .poster-vow-copy{position:absolute;left:0;right:0;top:9%;text-align:center;font-family:"Gowun Batang",serif;font-size:17px;line-height:1.65;color:#454943;letter-spacing:.035em;text-shadow:0 1px 8px rgba(255,255,255,.72)}
+.poster-vow .poster-date{position:absolute;right:18px;bottom:17px;font:8px Georgia,"Times New Roman",serif;letter-spacing:.2em;color:#686b65}
+
+@media(max-width:420px){
+  .mag-spread{min-height:470px}
+  .poster-copy{left:20px;right:20px;top:48px;padding:0}
+  .poster-copy h1{font-size:29px}
+  .poster-copy .names-top{font-size:15px}
+}
+
+/* GALLERY */
+.gallery{padding:84px 24px;text-align:center;background:#f1eee7}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:28px}
+.gallery-grid button{padding:0;border:0;background:none;cursor:pointer}
+.gallery-grid img{width:100%;aspect-ratio:1/1.08;object-fit:cover}
+.gallery-grid button:nth-child(2n) img{filter:grayscale(1)}
+.more-btn,.ghost-btn{margin-top:20px;border:1px solid var(--line);background:transparent;padding:11px 18px;font-size:11px;cursor:pointer;color:var(--ink)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:50;display:none;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal img{max-width:92vw;max-height:84vh;object-fit:contain}
+.modal-close,.modal-prev,.modal-next{position:absolute;border:0;background:rgba(255,255,255,.1);color:#fff;width:42px;height:42px;border-radius:50%;font-size:21px;cursor:pointer}
+.modal-close{top:18px;right:18px}
+.modal-prev{left:15px;top:50%}.modal-next{right:15px;top:50%}
+
+/* DAY */
+.day{background:#ebece6;text-align:center}
+.date-big{font-family:"Gowun Batang",serif;font-size:34px;margin:10px 0 3px}
+.calendar{margin:34px auto 0;max-width:355px}
+.cal-head,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.cal-head div{font-size:9px;color:#7c8078;padding:7px 0}
+.cal-cell{min-height:48px;display:grid;place-items:center;font-size:11px;position:relative}
+.cal-cell.wedding span{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center}
+.countdown{margin-top:24px;font-family:"Gowun Batang",serif;font-size:22px}
+
+/* MAP */
+.mapbox{margin-top:26px;border:1px solid var(--line);background:#f8f6f0;padding:14px}
+.mapbox svg{width:100%;height:auto}
+.transport{text-align:left;margin-top:24px}
+.transport h4{font-size:11px;letter-spacing:.12em;margin:20px 0 7px}
+.transport p{font-size:12px;line-height:1.75;color:#5f645d;margin:0}
+.maplinks{display:flex;gap:8px;margin-top:18px}
+.maplinks a{flex:1;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:11px 8px;font-size:11px;text-align:center}
+
+/* CONTACT / ACCOUNTS */
+.icon-list{margin-top:24px;border-top:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);text-align:left}
+.row-main{flex:1}.row-main strong{font-size:13px}.row-main small{display:block;font-size:11px;color:#888;margin-top:3px}
+.round-icon{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;text-decoration:none;color:var(--ink);background:#fff}
+.account{padding:12px 14px;border:1px solid var(--line);background:#fff;margin-top:8px;text-align:left}
+.account strong{display:block;font-size:12px;margin-bottom:6px}.account-line{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#62665f}.account-line span{white-space:nowrap}.account button{flex:0 0 auto;border:1px solid var(--line);border-radius:14px;background:#faf9f5;font-size:10px;color:var(--red);padding:4px 8px;cursor:pointer}.account-group-gap{height:14px}
+
+/* GUESTBOOK */
+.guestbook{background:#f1eee8;text-align:center}
+.guestbook-form{text-align:left;margin-top:26px}
+.guestbook-form input,.guestbook-form textarea{width:100%;border:1px solid var(--line);background:#fff;padding:12px;margin-bottom:9px;font-family:inherit;font-size:12px}
+.guestbook-form textarea{min-height:92px;resize:vertical}
+.submit{width:100%;border:0;background:#52564f;color:#fff;padding:13px;cursor:pointer}
+.guest-card{text-align:left;border-bottom:1px solid var(--line);padding:15px 0}
+.guest-card strong{font-size:12px}.guest-card p{font-size:12px;color:#60645e;line-height:1.7;margin:5px 0}.guest-card small{font-size:10px;color:#999}
+.note{font-size:10px;color:#92958f;line-height:1.6;margin-top:16px}
+
+.ending{position:relative;padding:0;background:var(--paper2);overflow:hidden}
+.ending img{width:100%;height:78svh;min-height:560px;object-fit:cover;display:block;filter:brightness(.82)}
+.ending-copy{position:absolute;left:0;right:0;top:7%;display:flex;align-items:flex-start;justify-content:center;text-align:center;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35);pointer-events:none}
+.ending-copy div{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.35;font-weight:400}
+
+.footer{text-align:center;padding:44px 20px 55px;font-size:10px;color:#999}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#222;color:#fff;padding:9px 13px;font-size:11px;opacity:0;pointer-events:none;transition:.2s;z-index:70}
 .toast.show{opacity:1}
-@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}.music-btn.playing{animation:none}}
 </style>
 </head>
 <body>
 <main class="page">
+
 <section class="cover">
-  <button class="cover-music" id="coverMusicBtn" onclick="toggleMusic()">🔊 MUSIC</button>
-  <img src="images/JIN03977_web.jpg" alt="박광현 윤에스더 웨딩사진">
-  <div class="cover-copy">
-    <div class="eyebrow">Wedding Invitation</div>
-    <h1>GWANGHYEON &amp; ESTHER</h1>
-    <p>2026. 12. 05 · SAT · 11:00 AM</p>
-    <p>KU CONVENTION WEDDING HALL</p>
-    <div class="scroll">SCROLL TO OPEN ↓</div>
+  <div class="poster">
+    <img src="images/JIN02912_web.jpg" alt="웨딩 커버">
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="배경음악 재생">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5Z"/><path d="M17 9c1.2 1.6 1.2 4.4 0 6"/><path d="M19.5 6.8c2.6 2.8 2.6 7.6 0 10.4"/></svg>
+    </button>
+    <div class="poster-copy">
+      <div class="mini">THE WEDDING OF</div>
+      <h1>저희, 결혼합니다.</h1>
+      <div class="names-top">박광현 그리고 윤에스더<br>2026. 12. 05</div>
+    </div>
   </div>
 </section>
 
-<section class="center fade">
-  <div class="kicker">Invitation</div>
-  <h2 class="section-title">We’re getting married.</h2>
-  <div class="rule"></div>
+<section class="section invitation fade">
+  <div class="kicker">INVITATION</div>
+  <h2 class="title">초대합니다</h2>
   <div class="copy">
     오랜 시간 서로의 일상에 머물며<br>
     기쁜 날도 평범한 날도 함께해왔습니다.<br><br>
     이제 부부로서 새로운 시작을 하려 합니다.<br>
     귀한 걸음으로 함께해 주시면 감사하겠습니다.
   </div>
-  <div class="names"><span>박광현</span><span>×</span><span>윤에스더</span></div>
   <div class="parents">
-    <div>박균일 · 안현선의 아들 <strong>박광현</strong></div>
-    <div>윤정관 · 이경자의 딸 <strong>윤에스더</strong></div>
+    박균일 · 안현선의 아들 <strong>박광현</strong><br>
+    윤정관 · 이경자의 딸 <strong>윤에스더</strong>
   </div>
+
 </section>
+
 
 <section class="moments">
   <div class="moments-head fade">
-    <div class="kicker">Photo Journal</div>
-    <h2 class="section-title">OUR MOMENTS</h2>
-    <div style="font-size:11px;color:#8a8d86;letter-spacing:.14em">WEDDING PORTRAITS · 2026</div>
-  </div>
-  <div class="editorial">
-    <figure class="shot left fade"><img src="images/JIN03370_web.jpg" alt=""><figcaption class="caption">01</figcaption></figure>
-    <figure class="shot right fade"><img src="images/JIN03516_web.jpg" alt=""><figcaption class="caption">02</figcaption></figure>
-    <div class="quote fade">JUST US.</div>
-    <figure class="shot center fade"><img src="images/JIN03282_web.jpg" alt=""><figcaption class="caption">03</figcaption></figure>
-    <figure class="shot small left fade"><img src="images/JIN03428_web.jpg" alt=""><figcaption class="caption">04</figcaption></figure>
-    <figure class="shot right fade"><img src="images/JIN03894_web.jpg" alt=""><figcaption class="caption">05</figcaption></figure>
-    <div class="triptych fade">
-      <img src="images/JIN03919_web.jpg" alt="연속컷 1">
-      <img src="images/JIN03922_web.jpg" alt="연속컷 2">
-      <img src="images/JIN03930_web.jpg" alt="연속컷 3">
-    </div>
-    <div class="quote fade">THREE FRAMES.</div>
-    <figure class="shot left fade"><img src="images/JIN03177_web.jpg" alt=""><figcaption class="caption">06</figcaption></figure>
-    <figure class="shot small right fade"><img src="images/JIN03354_web.jpg" alt=""><figcaption class="caption">07</figcaption></figure>
-    <div class="white-series fade">
-      <img src="images/JIN03060_web.jpg" alt="">
-      <img src="images/JIN03070_web.jpg" alt="">
-      <img src="images/JIN03076_web.jpg" alt="">
-    </div>
-  </div>
-</section>
-
-
-<section class="story fade">
-  <div class="story-intro">
-    <div class="kicker">Our Story</div>
-    <h2 class="section-title">US, OVER THE YEARS</h2>
-    <div class="copy">
-      같이 보낸 날들이 쌓여<br>
-      어느새 같은 날을 기다리게 되었습니다.
-    </div>
+    <div class="kicker">OUR MOMENTS</div>
+    <h2 class="title">우리의 순간</h2>
   </div>
 
-  <div class="storyline">
-    <div class="story-item">
-      <div class="story-dot"></div>
-      <div class="story-card">
-        <img src="images/beauty_20241003213249_web.jpg" alt="2024년 10월 3일">
-        <div class="story-date">2024. 10. 03</div>
-        <div class="story-text">그해 가을</div>
-      </div>
+  <div class="magazine">
+    <!-- 3060 / 3070 / 3076 / 3088 : magazine spread -->
+    <div class="mag-spread fade">
+      <img class="a" src="images/JIN03060_web.jpg" alt="">
+      <img class="b" src="images/JIN03070_web.jpg" alt="">
+      <img class="c" src="images/JIN03076_web.jpg" alt="">
+      <img class="d" src="images/JIN03088_web.jpg" alt="">
+      <div class="mag-note top">서로에게 한 걸음씩,<br>그리고 조금 더 가까이.</div>
     </div>
 
-    <div class="story-item">
-      <div class="story-dot"></div>
-      <div class="story-card">
-        <img src="images/beauty_20251026140825_web.jpg" alt="2025년 10월 26일">
-        <div class="story-date">2025. 10. 26</div>
-        <div class="story-text">또 한 번의 가을</div>
-      </div>
+    <div class="feature-pair fade">
+      <img src="images/JIN02777_web.jpg" alt="">
+      <img src="images/JIN02425_web.jpg" alt="">
     </div>
 
-    <div class="story-item">
-      <div class="story-dot"></div>
-      <div class="story-card">
-        <img src="images/beauty_20260517163924_web.jpg" alt="2026년 5월 17일">
-        <div class="story-date">2026. 05. 17</div>
-        <div class="story-text">결혼을 앞둔 봄</div>
-      </div>
+    <!-- 2572 / 2587 / 2597 : uneven triptych -->
+    <div class="strip3 fade">
+      <img src="images/JIN02572_web.jpg" alt="">
+      <img src="images/JIN02587_web.jpg" alt="">
+      <img src="images/JIN02597_web.jpg" alt="">
+    </div>
+    <div class="vow-card fade">서로의 비를 막아주고,<br>햇살은 함께 나누겠습니다.</div>
+
+    <!-- 3919 / 3922 / 3930 : dynamic sequence -->
+    <div class="sequence-mag fade">
+      <div class="sequence-story">좋은 날도 평범한 날도,<br>함께 같은 방향으로.</div>
+      <img src="images/JIN03919_web.jpg" alt="">
+      <img src="images/JIN03922_web.jpg" alt="">
+      <img src="images/JIN03930_web.jpg" alt="">
     </div>
 
-    <div class="story-item">
-      <div class="story-dot"></div>
-      <div class="story-card">
-        <img src="images/beauty_20260613132411_web.jpg" alt="2026년 6월 13일">
-        <div class="story-date">2026. 06. 13</div>
-        <div class="story-text">여름의 시작</div>
-      </div>
+    <div class="feature-pair fade">
+      <img src="images/JIN04076_web.jpg" alt="">
+      <img src="images/JIN04049_web.jpg" alt="">
     </div>
-  </div>
 
-  <div class="story-final">
-    <div class="kicker">And now</div>
-    <div class="serif">2026. 12. 05</div>
-    <div style="font-size:11px;letter-spacing:.14em;color:#73776f">OUR WEDDING DAY.</div>
+    <figure class="poster-vow fade">
+      <img src="images/JIN04186_web.jpg" alt="함께 손을 잡은 두 사람">
+      <div class="poster-vow-copy">앞으로의 모든 계절을,<br>함께.</div>
+      <div class="poster-date">DEC. 05, 2026</div>
+    </figure>
+
+    <figure class="hero-shot right fade">
+      <img src="images/JIN02121_web.jpg" alt="우산 아래 마주보며 웃는 두 사람">
+      <figcaption class="vow-card">지금처럼 웃으며,<br>행복하게 잘 살겠습니다.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section class="day center fade">
-  <div class="kicker">Wedding Day</div>
-  <h2 class="section-title">SAVE THE DATE</h2>
-  <div class="date-big">12 · 05 · 2026</div>
-  <div style="font-size:13px">토요일 오전 11시</div>
+<section class="gallery fade">
+  <div class="kicker">MORE OF US</div>
+  <h2 class="title">그리고, 우리의 기록</h2>
+  <div class="gallery-grid" id="galleryGrid"></div>
+  <button class="more-btn" onclick="openGallery(0)">사진 더보기 +</button>
+</section>
+
+<section class="section day fade">
+  <div class="kicker">WEDDING DAY</div>
+  <h2 class="title">예식 안내</h2>
+  <div class="date-big">2026. 12. 05</div>
+  <div style="font-size:12px">토요일 오전 11시 · KU 웨딩홀</div>
   <div class="calendar">
-    <div class="cal-head"><div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div></div>
-    <div class="cal-grid"><div class="cal-cell empty"></div>
-<div class="cal-cell empty"></div>
-<div class="cal-cell"><span>1</span></div>
-<div class="cal-cell"><span>2</span></div>
-<div class="cal-cell"><span>3</span></div>
-<div class="cal-cell"><span>4</span></div>
-<div class="cal-cell wedding-day"><span>5</span><small>OUR DAY</small></div>
-<div class="cal-cell"><span>6</span></div>
-<div class="cal-cell"><span>7</span></div>
-<div class="cal-cell"><span>8</span></div>
-<div class="cal-cell"><span>9</span></div>
-<div class="cal-cell"><span>10</span></div>
-<div class="cal-cell"><span>11</span></div>
-<div class="cal-cell"><span>12</span></div>
-<div class="cal-cell"><span>13</span></div>
-<div class="cal-cell"><span>14</span></div>
-<div class="cal-cell"><span>15</span></div>
-<div class="cal-cell"><span>16</span></div>
-<div class="cal-cell"><span>17</span></div>
-<div class="cal-cell"><span>18</span></div>
-<div class="cal-cell"><span>19</span></div>
-<div class="cal-cell"><span>20</span></div>
-<div class="cal-cell"><span>21</span></div>
-<div class="cal-cell"><span>22</span></div>
-<div class="cal-cell"><span>23</span></div>
-<div class="cal-cell"><span>24</span></div>
-<div class="cal-cell"><span>25</span></div>
-<div class="cal-cell"><span>26</span></div>
-<div class="cal-cell"><span>27</span></div>
-<div class="cal-cell"><span>28</span></div>
-<div class="cal-cell"><span>29</span></div>
-<div class="cal-cell"><span>30</span></div>
-<div class="cal-cell"><span>31</span></div>
-<div class="cal-cell empty"></div>
-<div class="cal-cell empty"></div></div>
-  </div>
-  <div class="countdown" id="countdown">D-DAY 계산 중<small>UNTIL OUR WEDDING</small></div>
-</section>
-
-<section class="center fade">
-  <div class="kicker">Location</div>
-  <h2 class="section-title">오시는 길</h2>
-  <div class="location-card">
-    <h3>KU컨벤션웨딩홀</h3>
-    <p>서울특별시 광진구 아차산로36길 5<br>건국대학교동문회관 KU컨벤션웨딩홀</p>
-    <div class="transport">
-      <h4>SUBWAY</h4>
-      <p>2호선 건대입구역 5번 출구 · 도보 약 5분<br>7호선 건대입구역 4번 출구 · 도보 약 5분</p>
-      <h4>BUS</h4>
-      <p>건국대학교앞 또는 건대입구역 정류장 하차<br>
-      간선 240, 721 · 지선 2222, 2224, 3217, 3220, 4212 · 마을 광진05<br>
-      공항버스 6013 이용 시 광진구의회 하차</p>
-      <h4>CAR &amp; PARKING</h4>
-      <p>내비게이션에 “KU컨벤션웨딩홀” 또는 “건국대학교동문회관” 검색.<br>
-      KU컨벤션웨딩홀 전용주차장 및 건대 수의과대학 주차장 이용 가능, 공식 안내 기준 2시간 무료입니다. 현장 주차요원의 안내를 따라주세요.</p>
-    </div>
-    <div class="btnrow">
-      <a class="button" target="_blank" href="https://map.naver.com/p/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80">네이버지도</a>
-      <a class="button" target="_blank" href="https://map.kakao.com/link/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80">카카오맵</a>
+    <div class="cal-head"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
+    <div class="cal-grid">
+      <div></div><div></div><div class="cal-cell"><span>1</span></div><div class="cal-cell"><span>2</span></div><div class="cal-cell"><span>3</span></div><div class="cal-cell"><span>4</span></div><div class="cal-cell wedding"><span>5</span></div>
+      <div class="cal-cell"><span>6</span></div><div class="cal-cell"><span>7</span></div><div class="cal-cell"><span>8</span></div><div class="cal-cell"><span>9</span></div><div class="cal-cell"><span>10</span></div><div class="cal-cell"><span>11</span></div><div class="cal-cell"><span>12</span></div>
+      <div class="cal-cell"><span>13</span></div><div class="cal-cell"><span>14</span></div><div class="cal-cell"><span>15</span></div><div class="cal-cell"><span>16</span></div><div class="cal-cell"><span>17</span></div><div class="cal-cell"><span>18</span></div><div class="cal-cell"><span>19</span></div>
+      <div class="cal-cell"><span>20</span></div><div class="cal-cell"><span>21</span></div><div class="cal-cell"><span>22</span></div><div class="cal-cell"><span>23</span></div><div class="cal-cell"><span>24</span></div><div class="cal-cell"><span>25</span></div><div class="cal-cell"><span>26</span></div>
+      <div class="cal-cell"><span>27</span></div><div class="cal-cell"><span>28</span></div><div class="cal-cell"><span>29</span></div><div class="cal-cell"><span>30</span></div><div class="cal-cell"><span>31</span></div>
     </div>
   </div>
-  <p class="note">식사 안내는 현재 별도 문구 없이 두었습니다. 필요하면 “예식 후 피로연이 준비되어 있습니다” 정도만 추가하는 편이 자연스럽습니다.</p>
+  <div class="countdown" id="countdown">D-DAY</div>
 </section>
 
-<section class="center fade">
-  <div class="kicker">Contact</div>
-  <h2 class="section-title">연락하기</h2>
-  <div class="contact-card">
-    <h3>신랑 박광현</h3><p>010-8705-0859</p>
-    <div class="btnrow"><a class="button" href="tel:01087050859">전화</a><a class="button" href="sms:01087050859">문자</a></div>
+<section class="section fade">
+  <div class="kicker">LOCATION</div>
+  <h2 class="title">오시는 길</h2>
+  <div class="copy">서울특별시 광진구 아차산로36길 5<br>건국대학교 동문회관 KU 웨딩홀</div>
+
+  <div class="mapbox">
+    <svg viewBox="0 0 420 280" role="img" aria-label="KU 웨딩홀 약도">
+      <rect width="420" height="280" fill="#f8f6f0"/>
+      <path d="M35 205 H385" stroke="#7c876e" stroke-width="16" opacity=".28"/>
+      <text x="230" y="198" font-size="12" fill="#596057">아차산로</text>
+      <path d="M110 205 V90" stroke="#9e9b8f" stroke-width="7" opacity=".5"/>
+      <path d="M110 118 H320" stroke="#9e9b8f" stroke-width="6" opacity=".45"/>
+      <path d="M275 118 V65" stroke="#9e9b8f" stroke-width="5" opacity=".42"/>
+      <rect x="245" y="54" width="105" height="58" rx="8" fill="#e8e3d8" stroke="#bfb8a8"/>
+      <text x="297" y="78" text-anchor="middle" font-size="12" fill="#4f554f">건국대학교</text>
+      <text x="297" y="95" text-anchor="middle" font-size="10" fill="#73786f">동문회관</text>
+      <circle cx="275" cy="118" r="9" fill="#9e463f"/>
+      <path d="M275 115 C266 101 250 107 250 119 C250 132 275 145 275 145 C275 145 300 132 300 119 C300 107 284 101 275 115Z" fill="#9e463f" opacity=".22"/>
+      <text x="306" y="134" font-size="13" font-weight="700" fill="#314438">KU 웨딩홀</text>
+      <circle cx="72" cy="205" r="22" fill="#8ba164"/>
+      <text x="72" y="201" text-anchor="middle" font-size="10" fill="#fff">2·7</text>
+      <text x="72" y="216" text-anchor="middle" font-size="8" fill="#fff">건대입구</text>
+      <text x="62" y="246" font-size="11" fill="#4f554f">5번 출구</text>
+      <path d="M88 190 C130 160 180 145 246 125" stroke="#9e463f" stroke-width="2.5" fill="none" stroke-dasharray="5 5"/>
+      <text x="142" y="167" font-size="10" fill="#9e463f">도보 약 5분</text>
+    </svg>
   </div>
-  <div class="contact-card">
-    <h3>신부 윤에스더</h3><p>010-7538-4558</p>
-    <div class="btnrow"><a class="button" href="tel:01075384558">전화</a><a class="button" href="sms:01075384558">문자</a></div>
+
+  <div class="transport">
+    <h4>지하철</h4>
+    <p>2호선 건대입구역 5번 출구 · 7호선 건대입구역 4번 출구에서 도보 약 5분</p>
+    <h4>버스</h4>
+    <p>건국대학교앞 또는 건대입구역 정류장 하차</p>
+    <h4>자가용 · 주차</h4>
+    <p>내비게이션에 “KU 웨딩홀” 또는 “건국대학교 동문회관” 검색. 전용주차장 및 지정 주차장을 이용해 주세요.</p>
+  </div>
+  <div class="maplinks">
+    <a href="https://map.naver.com/p/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" target="_blank">네이버 지도</a>
+    <a href="https://map.kakao.com/link/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" target="_blank">카카오맵</a>
   </div>
 </section>
 
-<section class="center fade">
-  <div class="kicker">For Your Heart</div>
-  <h2 class="section-title">마음 전하실 곳</h2>
-  <div class="account-card">
-    <h3>신랑 측 · 박광현</h3>
-    <p>신한은행 · 예금주 박광현</p><p class="account-number">123-456-789101</p>
-    <button onclick="copyText('123-456-789101')">계좌번호 복사</button>
+<section class="section fade">
+  <div class="kicker">CONTACT</div>
+  <h2 class="title">연락처</h2>
+  <div class="icon-list">
+    <div class="row"><div class="row-main"><strong>신랑 박광현</strong><small>010-8705-0859</small></div><a class="round-icon" href="tel:01087050859">☎</a><a class="round-icon" href="sms:01087050859">✉</a></div>
+    <div class="row"><div class="row-main"><strong>신부 윤에스더</strong><small>010-7538-4558</small></div><a class="round-icon" href="tel:01075384558">☎</a><a class="round-icon" href="sms:01075384558">✉</a></div>
   </div>
-  <div class="account-card">
-    <h3>신부 측 · 윤에스더</h3>
-    <p>신한은행 · 예금주 윤에스더</p><p class="account-number">123-456-789101</p>
-    <button onclick="copyText('123-456-789101')">계좌번호 복사</button>
-  </div>
-  <p class="note">혼주 계좌는 성함·은행 확인 후 접기/펼치기 형태로 추가 예정입니다.</p>
 </section>
 
 
-<section class="guestbook center fade">
-  <div class="kicker">Guestbook</div>
-  <h2 class="section-title">축하의 한마디</h2>
-  <div class="copy">저희에게 따뜻한 마음을 남겨주세요.</div>
+<section class="section fade">
+  <div class="kicker">ACCOUNT</div>
+  <h2 class="title">마음 전하실 곳</h2>
+  <div class="copy" style="font-size:12px;line-height:1.8;margin-bottom:20px">
+    참석이 어려우시거나 마음을 전하고 싶은 분들을 위해<br>
+    계좌번호를 안내드립니다.
+  </div>
+
+  <div class="account"><strong>신랑 · 박광현</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+  <div class="account"><strong>신랑 아버지 · 박균일</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+  <div class="account"><strong>신랑 어머니 · 안현선</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+<div class="account-group-gap"></div>
+  <div class="account"><strong>신부 · 윤에스더</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+  <div class="account"><strong>신부 아버지 · 윤정관</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+  <div class="account"><strong>신부 어머니 · 이경자</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
+</section>
+
+<section class="section guestbook fade">
+  <div class="kicker">GUESTBOOK</div>
+  <h2 class="title">따뜻한 마음</h2>
+  <div class="copy">두 사람에게 축하의 메시지를 남겨주세요.</div>
   <div class="guestbook-form">
-    <input id="guestName" maxlength="20" placeholder="이름 또는 닉네임">
-    <textarea id="guestMessage" maxlength="200" placeholder="축하 메시지를 남겨주세요."></textarea>
-    <button onclick="addGuestbookDemo()">방명록 남기기</button>
+    <input id="guestName" placeholder="이름">
+    <input id="guestPw" type="password" placeholder="비밀번호">
+    <textarea id="guestMessage" placeholder="축하의 마음을 남겨주세요."></textarea>
+    <button class="submit" onclick="addGuestbook()">등록하기</button>
   </div>
-  <div class="guestbook-list" id="guestbookList">
-    <div class="guestbook-card">
-      <strong>미리보기 방명록</strong>
-      <p>두 분의 새로운 시작을 진심으로 축하합니다. 오래오래 행복하세요!</p>
-      <small>2026. 12. 05</small>
-    </div>
+  <div id="guestList">
+    <div class="guest-card"><strong>미리보기</strong><p>두 분의 결혼을 진심으로 축하합니다!</p><small>2026.12.05</small></div>
   </div>
-  <p class="note">현재 버전은 화면 미리보기입니다. 실제 배포 시 데이터베이스를 연결하면 하객이 남긴 글이 저장되고 서로 볼 수 있게 됩니다.</p>
+  <div class="note">현재는 화면 미리보기용입니다. 실제 방명록 저장 기능은 배포 단계에서 데이터베이스를 연결하면 됩니다.</div>
 </section>
 
-<section class="share center fade">
-  <div class="kicker">Share</div>
-  <h2 class="section-title">초대장 공유하기</h2>
-  <p class="copy">소중한 분께 저희의 소식을 전해주세요.</p>
-  <div class="btnrow" style="justify-content:center">
-    <button onclick="shareInvitation()">공유하기</button>
-    <button onclick="copyText(location.href)">링크 복사</button>
-    <button onclick="kakaoPlaceholder()">카카오톡 공유</button>
-  </div>
-  <p style="font-size:10px;opacity:.75;margin-top:16px">카카오톡 전용 공유는 실제 배포 주소와 Kakao JavaScript 키 연결 후 활성화됩니다.</p>
+<section class="ending fade">
+  <img src="images/JIN03977_web.jpg" alt="웨딩 엔딩 사진">
+  <div class="ending-copy"><div>See you<br>on our day.</div></div>
 </section>
-
-<section class="end">
-  <img src="images/JIN03977_web.jpg" alt="">
-  <div class="end-copy fade"><div>See you<br>on our day.</div></div>
-</section>
+<div class="footer">박광현 그리고 윤에스더<br>2026. 12. 05</div>
 </main>
 
-<audio id="bgm" preload="auto" loop playsinline>
-  <source src="./bgm.mp3" type="audio/mpeg">
-  <source src="./bgm.m4a" type="audio/mp4">
-  브라우저가 오디오 재생을 지원하지 않습니다.
+<audio id="bgm" preload="metadata" loop playsinline>
+  <source src="bgm.mp3" type="audio/mpeg">
+  <source src="bgm.m4a" type="audio/mp4">
 </audio>
+
+<div class="modal" id="modal">
+  <button class="modal-close" onclick="closeGallery()">×</button>
+  <button class="modal-prev" onclick="moveGallery(-1)">‹</button>
+  <img id="modalImg" alt="">
+  <button class="modal-next" onclick="moveGallery(1)">›</button>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
-const wedding = new Date("2026-12-05T11:00:00+09:00");
-function updateCountdown(){
-  const now = new Date();
-  const diff = wedding - now;
-  const el = document.getElementById("countdown");
-  if(diff <= 0){ el.innerHTML="TODAY<small>IT'S OUR WEDDING DAY</small>"; return; }
-  const days = Math.ceil(diff / 86400000);
-  el.innerHTML=`D-${days}<small>UNTIL OUR WEDDING</small>`;
-}
-updateCountdown();
+const allGallery=[
+"JIN03428_web.jpg","JIN03516_web.jpg","JIN03638_web.jpg","JIN03894_web.jpg",
+"JIN03177_web.jpg","JIN03282_web.jpg","JIN03354_web.jpg","JIN03370_web.jpg",
+"JIN02871_web.jpg","JIN02902_web.jpg","JIN02653_web.jpg","JIN02239_web.jpg",
+"JIN02272_web.jpg","JIN04049_web.jpg","JIN04076_web.jpg","JIN04186_web.jpg"
+];
+const grid=document.getElementById("galleryGrid");
+allGallery.slice(0,9).forEach((f,i)=>{
+ const b=document.createElement("button");
+ b.innerHTML=`<img src="images/${f}" alt="갤러리 사진 ${i+1}">`;
+ b.onclick=()=>openGallery(i);
+ grid.appendChild(b);
+});
+let galleryIndex=0;
+function openGallery(i){galleryIndex=i;document.getElementById("modalImg").src="images/"+allGallery[i];document.getElementById("modal").classList.add("open");}
+function closeGallery(){document.getElementById("modal").classList.remove("open");}
+function moveGallery(d){galleryIndex=(galleryIndex+d+allGallery.length)%allGallery.length;document.getElementById("modalImg").src="images/"+allGallery[galleryIndex];}
 
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
- if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}
-}),{threshold:.12});
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
-function toast(msg){
- const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
- setTimeout(()=>t.classList.remove("show"),1700);
-}
-async function copyText(text){
- try{await navigator.clipboard.writeText(text);toast("복사했습니다.");}
- catch(e){prompt("아래 내용을 복사해주세요.",text);}
-}
-async function shareInvitation(){
- if(navigator.share){
-   try{await navigator.share({title:"박광현 ♥ 윤에스더 결혼합니다",text:"2026년 12월 5일 토요일 오전 11시 · KU컨벤션웨딩홀",url:location.href});}
-   catch(e){}
- } else {copyText(location.href)}
-}
-function kakaoPlaceholder(){toast("배포 후 카카오 공유를 연결할 예정입니다.");}
-function addGuestbookDemo(){
-  const name=document.getElementById("guestName").value.trim();
-  const msg=document.getElementById("guestMessage").value.trim();
-  if(!name || !msg){toast("이름과 메시지를 입력해주세요.");return;}
-  const card=document.createElement("div");
-  card.className="guestbook-card";
-  const today=new Date().toLocaleDateString("ko-KR");
-  card.innerHTML=`<strong>${escapeHtml(name)}</strong><p>${escapeHtml(msg)}</p><small>${today}</small>`;
-  document.getElementById("guestbookList").prepend(card);
-  document.getElementById("guestName").value="";
-  document.getElementById("guestMessage").value="";
-  toast("미리보기 방명록에 추가했습니다.");
-}
-function escapeHtml(s){
-  return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-}
+const wedding=new Date("2026-12-05T11:00:00+09:00");
+const days=Math.max(0,Math.ceil((wedding-new Date())/86400000));
+document.getElementById("countdown").textContent=days===0?"TODAY":`D-${days}`;
+
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1600);}
+async function copyText(t){try{await navigator.clipboard.writeText(t);toast("복사했습니다.");}catch(e){prompt("복사해주세요.",t);}}
 
 const bgm=document.getElementById("bgm");
-const coverMusicBtn=document.getElementById("coverMusicBtn");
-bgm.volume=0.45;
-
-bgm.addEventListener("play", () => {
-  coverMusicBtn.textContent="🔊 MUSIC ON";
-});
-bgm.addEventListener("pause", () => {
-  coverMusicBtn.textContent="🔇 MUSIC OFF";
-});
-bgm.addEventListener("error", () => {
-  const err = bgm.error;
-  console.error("Audio error:", err);
-  toast("음악 파일을 불러오지 못했습니다.");
-});
-
+const musicBtn=document.getElementById("musicBtn");
+bgm.volume=.35;
 async function toggleMusic(){
-  try{
-    if(bgm.paused){
-      if(bgm.readyState === 0) bgm.load();
-      await bgm.play();
-    }else{
-      bgm.pause();
-    }
-  }catch(e){
-    console.error("Playback failed:", e);
-    toast("음악 재생에 실패했습니다. 다른 브라우저에서도 확인해 주세요.");
-  }
+ try{
+   if(bgm.paused){await bgm.play();musicBtn.classList.add("playing");}
+   else{bgm.pause();musicBtn.classList.remove("playing");}
+ }catch(e){console.error(e);toast("음악은 배포 주소에서 다시 확인해 주세요.");}
 }
+
+function addGuestbook(){
+ const name=document.getElementById("guestName").value.trim();
+ const msg=document.getElementById("guestMessage").value.trim();
+ if(!name||!msg){toast("이름과 메시지를 입력해주세요.");return;}
+ const card=document.createElement("div");card.className="guest-card";
+ const today=new Date().toLocaleDateString("ko-KR");
+ card.innerHTML=`<strong>${escapeHtml(name)}</strong><p>${escapeHtml(msg)}</p><small>${today}</small>`;
+ document.getElementById("guestList").prepend(card);
+ document.getElementById("guestName").value="";document.getElementById("guestMessage").value="";
+ toast("미리보기 방명록에 등록했습니다.");
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 </script>
 </body>
 </html>
