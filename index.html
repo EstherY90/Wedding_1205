@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>박광현 ♥ 윤에스더 | Wedding Invitation</title>
+<meta name="description" content="2026년 12월 5일 토요일 오전 11시, KU컨벤션웨딩홀에서 박광현과 윤에스더가 결혼합니다.">
+<style>
+:root{--paper:#f7f5ef;--ink:#1d211d;--muted:#72776f;--green:#30473a;--soft:#eceee7;--line:rgba(29,33,29,.16);}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#deddd7;color:var(--ink);font-family:Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.page{width:min(100%,480px);margin:auto;background:var(--paper);overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.08)}
+.cover{position:relative;height:100svh;min-height:650px;background:#111}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover:after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.02),rgba(0,0,0,.06) 58%,rgba(0,0,0,.38))}
+.cover-copy{position:absolute;z-index:2;left:0;right:0;bottom:42px;color:white;text-align:center;padding:0 25px}
+.eyebrow,.kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase}
+.cover h1,.section-title,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+.cover h1{font-size:33px;margin:10px 0 9px}
+.cover p{font-size:13px;letter-spacing:.08em;margin:4px 0}
+.scroll{font-size:9px;letter-spacing:.22em;margin-top:24px}
+section{padding:88px 27px}
+.center{text-align:center}
+.section-title{font-size:30px;letter-spacing:.055em;margin:10px 0 20px}
+.copy{font-size:14px;line-height:2;color:#4e544e}
+.rule{height:62px;width:1px;background:var(--line);margin:34px auto}
+.names{display:flex;justify-content:center;gap:18px;align-items:center;margin-top:34px;font-family:Georgia,"Times New Roman",serif;font-size:18px}
+.parents{font-size:12px;color:#666;line-height:2;margin-top:28px}
+.parents .pending{color:#a19f98}
+.moments{padding-left:0;padding-right:0}
+.moments-head{text-align:center;padding:0 30px 48px}
+.editorial{display:flex;flex-direction:column;gap:72px;padding:0 18px}
+.shot{margin:0}
+.shot img{width:100%;height:auto;display:block}
+.shot.left{width:78%;align-self:flex-start}
+.shot.right{width:67%;align-self:flex-end}
+.shot.center{width:88%;align-self:center}
+.shot.small{width:56%}
+.caption{margin-top:9px;color:#85877f;font:11px Georgia,"Times New Roman",serif;letter-spacing:.09em}
+.quote{width:74%;align-self:center;text-align:center;font:italic 22px/1.55 Georgia,"Times New Roman",serif;color:#455449}
+.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;width:100%}
+.triptych img{width:100%;aspect-ratio:1/1.14;object-fit:cover}
+.white-series{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.white-series img{width:100%;display:block}
+.white-series img:last-child{grid-column:1/-1}
+
+.story{background:#f3f0e9;padding-left:22px;padding-right:22px}
+.story-intro{text-align:center;margin-bottom:54px}
+.storyline{position:relative;padding:0 4px}
+.storyline:before{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:1px;background:var(--line)}
+.story-item{position:relative;width:100%;margin:0 0 68px;display:flex}
+.story-item:nth-child(odd){justify-content:flex-start}
+.story-item:nth-child(even){justify-content:flex-end}
+.story-card{width:72%;position:relative}
+.story-card img{width:100%;display:block}
+.story-date{font:18px Georgia,"Times New Roman",serif;margin:10px 0 5px;letter-spacing:.04em}
+.story-text{font-size:12px;line-height:1.7;color:#626760}
+.story-dot{position:absolute;left:50%;top:17%;width:9px;height:9px;border-radius:50%;background:var(--green);transform:translateX(-50%);box-shadow:0 0 0 5px #f3f0e9}
+.story-final{text-align:center;padding-top:10px}
+.story-final .serif{font-size:28px;margin:8px 0}
+.guestbook{background:#fff}
+.guestbook-form{margin-top:26px;text-align:left}
+.guestbook-form input,.guestbook-form textarea{
+ width:100%;border:1px solid var(--line);background:var(--paper);padding:12px;margin:0 0 9px;
+ font:12px Arial,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);border-radius:0
+}
+.guestbook-form textarea{min-height:94px;resize:vertical}
+.guestbook-list{margin-top:26px}
+.guestbook-card{border-top:1px solid var(--line);padding:16px 0;text-align:left}
+.guestbook-card strong{font-size:12px}
+.guestbook-card p{font-size:12px;line-height:1.7;color:#5d625d;margin:6px 0}
+.guestbook-card small{font-size:10px;color:#999}
+.music-title{position:fixed;right:66px;bottom:25px;z-index:19;background:rgba(247,245,239,.9);padding:7px 9px;font-size:9px;letter-spacing:.08em;opacity:0;transform:translateX(8px);transition:.25s;pointer-events:none}
+.music-title.show{opacity:1;transform:none}
+
+.day{background:var(--soft)}
+.date-big{font:400 38px Georgia,"Times New Roman",serif;margin:16px 0 7px}
+.calendar{margin:38px auto 0;max-width:360px}
+.cal-head,.cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.cal-head div{font-size:9px;letter-spacing:.08em;color:#7d817b;padding:8px 0}
+.cal-cell{min-height:49px;display:flex;align-items:center;justify-content:center;position:relative;font-size:12px}
+.cal-cell.wedding-day span{width:32px;height:32px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center}
+.cal-cell small{position:absolute;bottom:-3px;font-size:6px;letter-spacing:.08em;color:var(--green)}
+.countdown{margin-top:28px;font:22px Georgia,"Times New Roman",serif}
+.countdown small{display:block;font:10px Arial,sans-serif;letter-spacing:.16em;color:#777;margin-top:8px}
+.location-card,.contact-card,.account-card{background:white;border:1px solid var(--line);padding:24px 20px;margin-top:20px;text-align:left}
+.location-card h3,.contact-card h3,.account-card h3{margin:0 0 12px;font-size:15px}
+.location-card p,.contact-card p,.account-card p{font-size:12px;line-height:1.85;color:#555;margin:6px 0}
+.transport{margin-top:24px;text-align:left}
+.transport h4{font-size:12px;letter-spacing:.08em;margin:20px 0 6px}
+.transport p{font-size:12px;line-height:1.75;color:#5d625d;margin:0}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+button,a.button{appearance:none;border:1px solid var(--line);background:var(--paper);padding:10px 12px;font-size:12px;color:var(--ink);text-decoration:none;cursor:pointer;border-radius:0}
+.account-number{font-family:monospace;font-size:14px!important;letter-spacing:.04em}
+.note{font-size:11px!important;color:#868981!important}
+.musicbar{position:fixed;right:16px;bottom:16px;z-index:20}
+.musicbar button{border-radius:50%;width:44px;height:44px;background:rgba(247,245,239,.93);box-shadow:0 3px 16px rgba(0,0,0,.13)}
+.share{background:#303c34;color:white}
+.share .section-title,.share p{color:white}
+.share button{border-color:rgba(255,255,255,.35);background:transparent;color:white}
+.end{padding:0;position:relative;background:#111}
+.end img{width:100%;height:78svh;min-height:560px;object-fit:cover;display:block;filter:brightness(.78)}
+.end-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
+.end-copy div{font:27px/1.45 Georgia,"Times New Roman",serif}
+.fade{opacity:0;transform:translateY(22px);transition:.8s ease}
+.fade.show{opacity:1;transform:none}
+.toast{position:fixed;left:50%;bottom:72px;transform:translateX(-50%);background:#222;color:white;padding:10px 14px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;z-index:30}
+.toast.show{opacity:1}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<main class="page">
+<section class="cover">
+  <img src="images/JIN03977_web.jpg" alt="박광현 윤에스더 웨딩사진">
+  <div class="cover-copy">
+    <div class="eyebrow">Wedding Invitation</div>
+    <h1>GWANGHYEON &amp; ESTHER</h1>
+    <p>2026. 12. 05 · SAT · 11:00 AM</p>
+    <p>KU CONVENTION WEDDING HALL</p>
+    <div class="scroll">SCROLL TO OPEN ↓</div>
+  </div>
+</section>
+
+<section class="center fade">
+  <div class="kicker">Invitation</div>
+  <h2 class="section-title">We’re getting married.</h2>
+  <div class="rule"></div>
+  <div class="copy">
+    비가 내려도 함께 걷고,<br>
+    맑은 날에는 더 오래 웃으며<br>
+    서로의 가장 편안한 사람이 되어 왔습니다.<br><br>
+    이제 두 사람이 같은 방향을 바라보며<br>
+    새로운 계절을 시작하려 합니다.<br>
+    귀한 걸음으로 저희의 시작을 축복해 주세요.
+  </div>
+  <div class="names"><span>박광현</span><span>×</span><span>윤에스더</span></div>
+  <div class="parents">
+    <div>박균일 · 안현선의 아들 <strong>박광현</strong></div>
+    <div>윤정관 · 이경자의 딸 <strong>윤에스더</strong></div>
+  </div>
+</section>
+
+<section class="moments">
+  <div class="moments-head fade">
+    <div class="kicker">Photo Journal</div>
+    <h2 class="section-title">OUR MOMENTS</h2>
+    <div style="font-size:11px;color:#8a8d86;letter-spacing:.14em">RAIN · GREEN · US</div>
+  </div>
+  <div class="editorial">
+    <figure class="shot left fade"><img src="images/JIN03370_web.jpg" alt=""><figcaption class="caption">01 · WALKING TOGETHER</figcaption></figure>
+    <figure class="shot right fade"><img src="images/JIN03516_web.jpg" alt=""><figcaption class="caption">02 · A LITTLE CLOSER</figcaption></figure>
+    <div class="quote fade">“in all the little moments,<br>we found our forever.”</div>
+    <figure class="shot center fade"><img src="images/JIN03282_web.jpg" alt=""><figcaption class="caption">03 · UNDER THE RAIN</figcaption></figure>
+    <figure class="shot small left fade"><img src="images/JIN03428_web.jpg" alt=""><figcaption class="caption">04 · LAUGHING</figcaption></figure>
+    <figure class="shot right fade"><img src="images/JIN03894_web.jpg" alt=""><figcaption class="caption">05 · JUST LIKE THIS</figcaption></figure>
+    <div class="triptych fade">
+      <img src="images/JIN03919_web.jpg" alt="연속컷 1">
+      <img src="images/JIN03922_web.jpg" alt="연속컷 2">
+      <img src="images/JIN03930_web.jpg" alt="연속컷 3">
+    </div>
+    <div class="quote fade">“one story,<br>told in three little frames.”</div>
+    <figure class="shot left fade"><img src="images/JIN03177_web.jpg" alt=""><figcaption class="caption">06 · ANOTHER CHAPTER</figcaption></figure>
+    <figure class="shot small right fade"><img src="images/JIN03354_web.jpg" alt=""><figcaption class="caption">07 · CLOSE</figcaption></figure>
+    <div class="white-series fade">
+      <img src="images/JIN03060_web.jpg" alt="">
+      <img src="images/JIN03070_web.jpg" alt="">
+      <img src="images/JIN03076_web.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+
+<section class="story fade">
+  <div class="story-intro">
+    <div class="kicker">Our Story</div>
+    <h2 class="section-title">THE DAYS WE KEPT</h2>
+    <div class="copy">처음 만난 날의 사진은 없지만,<br>우리에게 남은 평범한 장면들이<br>조금씩 오늘을 만들었습니다.</div>
+  </div>
+
+  <div class="storyline">
+    <div class="story-item">
+      <div class="story-dot"></div>
+      <div class="story-card">
+        <img src="images/beauty_20241003213249_web.jpg" alt="2024년 10월 3일">
+        <div class="story-date">2024. 10. 03</div>
+        <div class="story-text">사진첩에 남아 있는 우리의 오래된 한 장면.</div>
+      </div>
+    </div>
+
+    <div class="story-item">
+      <div class="story-dot"></div>
+      <div class="story-card">
+        <img src="images/beauty_20251026140825_web.jpg" alt="2025년 10월 26일">
+        <div class="story-date">2025. 10. 26</div>
+        <div class="story-text">함께 걷고, 쉬고, 별것 아닌 하루를 함께 보내던 계절.</div>
+      </div>
+    </div>
+
+    <div class="story-item">
+      <div class="story-dot"></div>
+      <div class="story-card">
+        <img src="images/beauty_20260517163924_web.jpg" alt="2026년 5월 17일">
+        <div class="story-date">2026. 05. 17</div>
+        <div class="story-text">평범한 약속도 둘이어서 오래 기억하고 싶은 날이 되고.</div>
+      </div>
+    </div>
+
+    <div class="story-item">
+      <div class="story-dot"></div>
+      <div class="story-card">
+        <img src="images/beauty_20260613132411_web.jpg" alt="2026년 6월 13일">
+        <div class="story-date">2026. 06. 13</div>
+        <div class="story-text">결혼을 준비하면서도 여전히 우리다운 모습으로.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="story-final">
+    <div class="kicker">And now</div>
+    <div class="serif">2026. 12. 05</div>
+    <div style="font-size:11px;letter-spacing:.14em;color:#73776f">WE GET MARRIED.</div>
+  </div>
+</section>
+
+<section class="day center fade">
+  <div class="kicker">Wedding Day</div>
+  <h2 class="section-title">SAVE THE DATE</h2>
+  <div class="date-big">12 · 05 · 2026</div>
+  <div style="font-size:13px">토요일 오전 11시</div>
+  <div class="calendar">
+    <div class="cal-head"><div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div></div>
+    <div class="cal-grid"><div class="cal-cell empty"></div>
+<div class="cal-cell empty"></div>
+<div class="cal-cell"><span>1</span></div>
+<div class="cal-cell"><span>2</span></div>
+<div class="cal-cell"><span>3</span></div>
+<div class="cal-cell"><span>4</span></div>
+<div class="cal-cell wedding-day"><span>5</span><small>OUR DAY</small></div>
+<div class="cal-cell"><span>6</span></div>
+<div class="cal-cell"><span>7</span></div>
+<div class="cal-cell"><span>8</span></div>
+<div class="cal-cell"><span>9</span></div>
+<div class="cal-cell"><span>10</span></div>
+<div class="cal-cell"><span>11</span></div>
+<div class="cal-cell"><span>12</span></div>
+<div class="cal-cell"><span>13</span></div>
+<div class="cal-cell"><span>14</span></div>
+<div class="cal-cell"><span>15</span></div>
+<div class="cal-cell"><span>16</span></div>
+<div class="cal-cell"><span>17</span></div>
+<div class="cal-cell"><span>18</span></div>
+<div class="cal-cell"><span>19</span></div>
+<div class="cal-cell"><span>20</span></div>
+<div class="cal-cell"><span>21</span></div>
+<div class="cal-cell"><span>22</span></div>
+<div class="cal-cell"><span>23</span></div>
+<div class="cal-cell"><span>24</span></div>
+<div class="cal-cell"><span>25</span></div>
+<div class="cal-cell"><span>26</span></div>
+<div class="cal-cell"><span>27</span></div>
+<div class="cal-cell"><span>28</span></div>
+<div class="cal-cell"><span>29</span></div>
+<div class="cal-cell"><span>30</span></div>
+<div class="cal-cell"><span>31</span></div>
+<div class="cal-cell empty"></div>
+<div class="cal-cell empty"></div></div>
+  </div>
+  <div class="countdown" id="countdown">D-DAY 계산 중<small>UNTIL OUR WEDDING</small></div>
+</section>
+
+<section class="center fade">
+  <div class="kicker">Location</div>
+  <h2 class="section-title">오시는 길</h2>
+  <div class="location-card">
+    <h3>KU컨벤션웨딩홀</h3>
+    <p>서울특별시 광진구 아차산로36길 5<br>건국대학교동문회관 KU컨벤션웨딩홀</p>
+    <div class="transport">
+      <h4>SUBWAY</h4>
+      <p>2호선 건대입구역 5번 출구 · 도보 약 5분<br>7호선 건대입구역 4번 출구 · 도보 약 5분</p>
+      <h4>BUS</h4>
+      <p>건국대학교앞 또는 건대입구역 정류장 하차<br>
+      간선 240, 721 · 지선 2222, 2224, 3217, 3220, 4212 · 마을 광진05<br>
+      공항버스 6013 이용 시 광진구의회 하차</p>
+      <h4>CAR &amp; PARKING</h4>
+      <p>내비게이션에 “KU컨벤션웨딩홀” 또는 “건국대학교동문회관” 검색.<br>
+      KU컨벤션웨딩홀 전용주차장 및 건대 수의과대학 주차장 이용 가능, 공식 안내 기준 2시간 무료입니다. 현장 주차요원의 안내를 따라주세요.</p>
+    </div>
+    <div class="btnrow">
+      <a class="button" target="_blank" href="https://map.naver.com/p/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80">네이버지도</a>
+      <a class="button" target="_blank" href="https://map.kakao.com/link/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80">카카오맵</a>
+    </div>
+  </div>
+  <p class="note">식사 안내는 현재 별도 문구 없이 두었습니다. 필요하면 “예식 후 피로연이 준비되어 있습니다” 정도만 추가하는 편이 자연스럽습니다.</p>
+</section>
+
+<section class="center fade">
+  <div class="kicker">Contact</div>
+  <h2 class="section-title">연락하기</h2>
+  <div class="contact-card">
+    <h3>신랑 박광현</h3><p>010-8705-0859</p>
+    <div class="btnrow"><a class="button" href="tel:01087050859">전화</a><a class="button" href="sms:01087050859">문자</a></div>
+  </div>
+  <div class="contact-card">
+    <h3>신부 윤에스더</h3><p>010-7538-4558</p>
+    <div class="btnrow"><a class="button" href="tel:01075384558">전화</a><a class="button" href="sms:01075384558">문자</a></div>
+  </div>
+</section>
+
+<section class="center fade">
+  <div class="kicker">For Your Heart</div>
+  <h2 class="section-title">마음 전하실 곳</h2>
+  <div class="account-card">
+    <h3>신랑 측 · 박광현</h3>
+    <p>신한은행 · 예금주 박광현</p><p class="account-number">123-456-789101</p>
+    <button onclick="copyText('123-456-789101')">계좌번호 복사</button>
+  </div>
+  <div class="account-card">
+    <h3>신부 측 · 윤에스더</h3>
+    <p>신한은행 · 예금주 윤에스더</p><p class="account-number">123-456-789101</p>
+    <button onclick="copyText('123-456-789101')">계좌번호 복사</button>
+  </div>
+  <p class="note">혼주 계좌는 성함·은행 확인 후 접기/펼치기 형태로 추가 예정입니다.</p>
+</section>
+
+
+<section class="guestbook center fade">
+  <div class="kicker">Guestbook</div>
+  <h2 class="section-title">축하의 한마디</h2>
+  <div class="copy">저희에게 따뜻한 마음을 남겨주세요.</div>
+  <div class="guestbook-form">
+    <input id="guestName" maxlength="20" placeholder="이름 또는 닉네임">
+    <textarea id="guestMessage" maxlength="200" placeholder="축하 메시지를 남겨주세요."></textarea>
+    <button onclick="addGuestbookDemo()">방명록 남기기</button>
+  </div>
+  <div class="guestbook-list" id="guestbookList">
+    <div class="guestbook-card">
+      <strong>미리보기 방명록</strong>
+      <p>두 분의 새로운 시작을 진심으로 축하합니다. 오래오래 행복하세요!</p>
+      <small>2026. 12. 05</small>
+    </div>
+  </div>
+  <p class="note">현재 버전은 화면 미리보기입니다. 실제 배포 시 데이터베이스를 연결하면 하객이 남긴 글이 저장되고 서로 볼 수 있게 됩니다.</p>
+</section>
+
+<section class="share center fade">
+  <div class="kicker">Share</div>
+  <h2 class="section-title">초대장 공유하기</h2>
+  <p class="copy">소중한 분께 저희의 소식을 전해주세요.</p>
+  <div class="btnrow" style="justify-content:center">
+    <button onclick="shareInvitation()">공유하기</button>
+    <button onclick="copyText(location.href)">링크 복사</button>
+    <button onclick="kakaoPlaceholder()">카카오톡 공유</button>
+  </div>
+  <p style="font-size:10px;opacity:.75;margin-top:16px">카카오톡 전용 공유는 실제 배포 주소와 Kakao JavaScript 키 연결 후 활성화됩니다.</p>
+</section>
+
+<section class="end">
+  <img src="images/JIN03977_web.jpg" alt="">
+  <div class="end-copy fade"><div>See you<br>on our day.</div></div>
+</section>
+</main>
+
+<audio id="bgm" src="mood-indigo.mp3" preload="metadata" loop></audio>
+<div class="music-title" id="musicTitle">CHEEZE · Mood Indigo</div>
+<div class="musicbar"><button id="musicBtn" onclick="toggleMusic()" aria-label="배경음악 재생 또는 일시정지">♫</button></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const wedding = new Date("2026-12-05T11:00:00+09:00");
+function updateCountdown(){
+  const now = new Date();
+  const diff = wedding - now;
+  const el = document.getElementById("countdown");
+  if(diff <= 0){ el.innerHTML="TODAY<small>IT'S OUR WEDDING DAY</small>"; return; }
+  const days = Math.ceil(diff / 86400000);
+  el.innerHTML=`D-${days}<small>UNTIL OUR WEDDING</small>`;
+}
+updateCountdown();
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+ if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}
+}),{threshold:.12});
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+
+function toast(msg){
+ const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
+ setTimeout(()=>t.classList.remove("show"),1700);
+}
+async function copyText(text){
+ try{await navigator.clipboard.writeText(text);toast("복사했습니다.");}
+ catch(e){prompt("아래 내용을 복사해주세요.",text);}
+}
+async function shareInvitation(){
+ if(navigator.share){
+   try{await navigator.share({title:"박광현 ♥ 윤에스더 결혼합니다",text:"2026년 12월 5일 토요일 오전 11시 · KU컨벤션웨딩홀",url:location.href});}
+   catch(e){}
+ } else {copyText(location.href)}
+}
+function kakaoPlaceholder(){toast("배포 후 카카오 공유를 연결할 예정입니다.");}
+let musicPlaying=false;
+const bgm=document.getElementById("bgm");
+bgm.volume=0.28;
+async function toggleMusic(){
+  const title=document.getElementById("musicTitle");
+  if(!musicPlaying){
+    try{
+      await bgm.play();
+      musicPlaying=true;
+      document.getElementById("musicBtn").textContent="Ⅱ";
+      title.classList.add("show");
+      setTimeout(()=>title.classList.remove("show"),2200);
+    }catch(e){toast("화면을 한 번 터치한 뒤 다시 눌러주세요.");}
+  }else{
+    bgm.pause();
+    musicPlaying=false;
+    document.getElementById("musicBtn").textContent="♫";
+  }
+}
+function addGuestbookDemo(){
+  const name=document.getElementById("guestName").value.trim();
+  const msg=document.getElementById("guestMessage").value.trim();
+  if(!name || !msg){toast("이름과 메시지를 입력해주세요.");return;}
+  const card=document.createElement("div");
+  card.className="guestbook-card";
+  const today=new Date().toLocaleDateString("ko-KR");
+  card.innerHTML=`<strong>${escapeHtml(name)}</strong><p>${escapeHtml(msg)}</p><small>${today}</small>`;
+  document.getElementById("guestbookList").prepend(card);
+  document.getElementById("guestName").value="";
+  document.getElementById("guestMessage").value="";
+  toast("미리보기 방명록에 추가했습니다.");
+}
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+</script>
+</body>
+</html>
