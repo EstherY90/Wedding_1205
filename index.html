@@ -113,6 +113,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
 <body>
 <main class="page">
 <section class="cover">
+  <button class="cover-music" id="coverMusicBtn" onclick="toggleMusic()">🔊 MUSIC</button>
   <img src="images/JIN03977_web.jpg" alt="박광현 윤에스더 웨딩사진">
   <div class="cover-copy">
     <div class="eyebrow">Wedding Invitation</div>
@@ -128,12 +129,10 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
   <h2 class="section-title">We’re getting married.</h2>
   <div class="rule"></div>
   <div class="copy">
-    비가 내려도 함께 걷고,<br>
-    맑은 날에는 더 오래 웃으며<br>
-    서로의 가장 편안한 사람이 되어 왔습니다.<br><br>
-    이제 두 사람이 같은 방향을 바라보며<br>
-    새로운 계절을 시작하려 합니다.<br>
-    귀한 걸음으로 저희의 시작을 축복해 주세요.
+    오랜 시간 서로의 일상에 머물며<br>
+    기쁜 날도 평범한 날도 함께해왔습니다.<br><br>
+    이제 부부로서 새로운 시작을 하려 합니다.<br>
+    귀한 걸음으로 함께해 주시면 감사하겠습니다.
   </div>
   <div class="names"><span>박광현</span><span>×</span><span>윤에스더</span></div>
   <div class="parents">
@@ -146,23 +145,23 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
   <div class="moments-head fade">
     <div class="kicker">Photo Journal</div>
     <h2 class="section-title">OUR MOMENTS</h2>
-    <div style="font-size:11px;color:#8a8d86;letter-spacing:.14em">RAIN · GREEN · US</div>
+    <div style="font-size:11px;color:#8a8d86;letter-spacing:.14em">WEDDING PORTRAITS · 2026</div>
   </div>
   <div class="editorial">
-    <figure class="shot left fade"><img src="images/JIN03370_web.jpg" alt=""><figcaption class="caption">01 · WALKING TOGETHER</figcaption></figure>
-    <figure class="shot right fade"><img src="images/JIN03516_web.jpg" alt=""><figcaption class="caption">02 · A LITTLE CLOSER</figcaption></figure>
-    <div class="quote fade">“in all the little moments,<br>we found our forever.”</div>
-    <figure class="shot center fade"><img src="images/JIN03282_web.jpg" alt=""><figcaption class="caption">03 · UNDER THE RAIN</figcaption></figure>
-    <figure class="shot small left fade"><img src="images/JIN03428_web.jpg" alt=""><figcaption class="caption">04 · LAUGHING</figcaption></figure>
-    <figure class="shot right fade"><img src="images/JIN03894_web.jpg" alt=""><figcaption class="caption">05 · JUST LIKE THIS</figcaption></figure>
+    <figure class="shot left fade"><img src="images/JIN03370_web.jpg" alt=""><figcaption class="caption">01</figcaption></figure>
+    <figure class="shot right fade"><img src="images/JIN03516_web.jpg" alt=""><figcaption class="caption">02</figcaption></figure>
+    <div class="quote fade">JUST US.</div>
+    <figure class="shot center fade"><img src="images/JIN03282_web.jpg" alt=""><figcaption class="caption">03</figcaption></figure>
+    <figure class="shot small left fade"><img src="images/JIN03428_web.jpg" alt=""><figcaption class="caption">04</figcaption></figure>
+    <figure class="shot right fade"><img src="images/JIN03894_web.jpg" alt=""><figcaption class="caption">05</figcaption></figure>
     <div class="triptych fade">
       <img src="images/JIN03919_web.jpg" alt="연속컷 1">
       <img src="images/JIN03922_web.jpg" alt="연속컷 2">
       <img src="images/JIN03930_web.jpg" alt="연속컷 3">
     </div>
-    <div class="quote fade">“one story,<br>told in three little frames.”</div>
-    <figure class="shot left fade"><img src="images/JIN03177_web.jpg" alt=""><figcaption class="caption">06 · ANOTHER CHAPTER</figcaption></figure>
-    <figure class="shot small right fade"><img src="images/JIN03354_web.jpg" alt=""><figcaption class="caption">07 · CLOSE</figcaption></figure>
+    <div class="quote fade">THREE FRAMES.</div>
+    <figure class="shot left fade"><img src="images/JIN03177_web.jpg" alt=""><figcaption class="caption">06</figcaption></figure>
+    <figure class="shot small right fade"><img src="images/JIN03354_web.jpg" alt=""><figcaption class="caption">07</figcaption></figure>
     <div class="white-series fade">
       <img src="images/JIN03060_web.jpg" alt="">
       <img src="images/JIN03070_web.jpg" alt="">
@@ -175,8 +174,11 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
 <section class="story fade">
   <div class="story-intro">
     <div class="kicker">Our Story</div>
-    <h2 class="section-title">THE DAYS WE KEPT</h2>
-    <div class="copy">처음 만난 날의 사진은 없지만,<br>우리에게 남은 평범한 장면들이<br>조금씩 오늘을 만들었습니다.</div>
+    <h2 class="section-title">US, OVER THE YEARS</h2>
+    <div class="copy">
+      같이 보낸 날들이 쌓여<br>
+      어느새 같은 날을 기다리게 되었습니다.
+    </div>
   </div>
 
   <div class="storyline">
@@ -185,7 +187,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
       <div class="story-card">
         <img src="images/beauty_20241003213249_web.jpg" alt="2024년 10월 3일">
         <div class="story-date">2024. 10. 03</div>
-        <div class="story-text">사진첩에 남아 있는 우리의 오래된 한 장면.</div>
+        <div class="story-text">그해 가을</div>
       </div>
     </div>
 
@@ -194,7 +196,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
       <div class="story-card">
         <img src="images/beauty_20251026140825_web.jpg" alt="2025년 10월 26일">
         <div class="story-date">2025. 10. 26</div>
-        <div class="story-text">함께 걷고, 쉬고, 별것 아닌 하루를 함께 보내던 계절.</div>
+        <div class="story-text">또 한 번의 가을</div>
       </div>
     </div>
 
@@ -203,7 +205,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
       <div class="story-card">
         <img src="images/beauty_20260517163924_web.jpg" alt="2026년 5월 17일">
         <div class="story-date">2026. 05. 17</div>
-        <div class="story-text">평범한 약속도 둘이어서 오래 기억하고 싶은 날이 되고.</div>
+        <div class="story-text">결혼을 앞둔 봄</div>
       </div>
     </div>
 
@@ -212,7 +214,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
       <div class="story-card">
         <img src="images/beauty_20260613132411_web.jpg" alt="2026년 6월 13일">
         <div class="story-date">2026. 06. 13</div>
-        <div class="story-text">결혼을 준비하면서도 여전히 우리다운 모습으로.</div>
+        <div class="story-text">여름의 시작</div>
       </div>
     </div>
   </div>
@@ -220,7 +222,7 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
   <div class="story-final">
     <div class="kicker">And now</div>
     <div class="serif">2026. 12. 05</div>
-    <div style="font-size:11px;letter-spacing:.14em;color:#73776f">WE GET MARRIED.</div>
+    <div style="font-size:11px;letter-spacing:.14em;color:#73776f">OUR WEDDING DAY.</div>
   </div>
 </section>
 
@@ -362,9 +364,11 @@ button,a.button{appearance:none;border:1px solid var(--line);background:var(--pa
 </section>
 </main>
 
-<audio id="bgm" src="mood-indigo.mp3" preload="metadata" loop></audio>
-<div class="music-title" id="musicTitle">CHEEZE · Mood Indigo</div>
-<div class="musicbar"><button id="musicBtn" onclick="toggleMusic()" aria-label="배경음악 재생 또는 일시정지">♫</button></div>
+<audio id="bgm" preload="auto" loop playsinline>
+  <source src="./bgm.mp3" type="audio/mpeg">
+  <source src="./bgm.m4a" type="audio/mp4">
+  브라우저가 오디오 재생을 지원하지 않습니다.
+</audio>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -399,25 +403,6 @@ async function shareInvitation(){
  } else {copyText(location.href)}
 }
 function kakaoPlaceholder(){toast("배포 후 카카오 공유를 연결할 예정입니다.");}
-let musicPlaying=false;
-const bgm=document.getElementById("bgm");
-bgm.volume=0.28;
-async function toggleMusic(){
-  const title=document.getElementById("musicTitle");
-  if(!musicPlaying){
-    try{
-      await bgm.play();
-      musicPlaying=true;
-      document.getElementById("musicBtn").textContent="Ⅱ";
-      title.classList.add("show");
-      setTimeout(()=>title.classList.remove("show"),2200);
-    }catch(e){toast("화면을 한 번 터치한 뒤 다시 눌러주세요.");}
-  }else{
-    bgm.pause();
-    musicPlaying=false;
-    document.getElementById("musicBtn").textContent="♫";
-  }
-}
 function addGuestbookDemo(){
   const name=document.getElementById("guestName").value.trim();
   const msg=document.getElementById("guestMessage").value.trim();
@@ -433,6 +418,36 @@ function addGuestbookDemo(){
 }
 function escapeHtml(s){
   return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+const bgm=document.getElementById("bgm");
+const coverMusicBtn=document.getElementById("coverMusicBtn");
+bgm.volume=0.45;
+
+bgm.addEventListener("play", () => {
+  coverMusicBtn.textContent="🔊 MUSIC ON";
+});
+bgm.addEventListener("pause", () => {
+  coverMusicBtn.textContent="🔇 MUSIC OFF";
+});
+bgm.addEventListener("error", () => {
+  const err = bgm.error;
+  console.error("Audio error:", err);
+  toast("음악 파일을 불러오지 못했습니다.");
+});
+
+async function toggleMusic(){
+  try{
+    if(bgm.paused){
+      if(bgm.readyState === 0) bgm.load();
+      await bgm.play();
+    }else{
+      bgm.pause();
+    }
+  }catch(e){
+    console.error("Playback failed:", e);
+    toast("음악 재생에 실패했습니다. 다른 브라우저에서도 확인해 주세요.");
+  }
 }
 </script>
 </body>
