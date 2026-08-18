@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>박광현 · 윤에스더 결혼합니다</title>
-<meta name="description" content="2026년 12월 5일 토요일 오전 11시, KU 웨딩홀에서 박광현과 윤에스더가 결혼합니다.">
+<meta content="2026년 12월 5일 토요일 오전 11시, KU 웨딩홀에서 박광현과 윤에스더가 결혼합니다." name="description"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
 
@@ -110,6 +111,46 @@ button,a{font:inherit}
 .feature-pair img{width:100%;object-fit:cover;border:6px solid #f8f4eb;box-shadow:0 8px 20px rgba(62,51,39,.07)}
 .feature-pair img:first-child{aspect-ratio:.86/1}
 .feature-pair img:last-child{aspect-ratio:.72/1;margin-top:58px}
+
+/* Umbrella portrait pair: male left / bride right, equal size, open V composition */
+.umbrella-pair{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  align-items:end;
+  padding:24px 4px 32px;
+  border-top:0;
+  border-bottom:0;
+  overflow:visible;
+}
+.umbrella-card{
+  position:relative;
+  width:100%;
+  aspect-ratio:.78/1;
+  transform-origin:50% 100%;
+}
+/* Match the reference: left card is almost straight, right card tilts outward more. */
+.umbrella-card.left{
+  transform:translateY(-2px) rotate(-.7deg);
+  z-index:1;
+}
+.umbrella-card.right{
+  transform:translateY(0) rotate(4deg);
+  z-index:2;
+}
+.umbrella-card img{
+  display:block;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto !important;
+  margin-top:0 !important;
+  object-fit:cover;
+  object-position:center center;
+  transform-origin:center;
+}
+/* Final orientation from the reference image: groom mirrored, bride kept in original orientation. */
+.umbrella-card.left img{transform:scaleX(-1);}
+.umbrella-card.right img{transform:scaleX(1);}
+
 
 .strip3{position:relative;display:grid;grid-template-columns:.9fr 1.22fr .9fr;gap:8px;align-items:end;padding:28px 8px 22px;background:#e9e4da;border:1px solid #d9d1c4}
 .strip3:before{content:"03  /  TOGETHER";position:absolute;left:12px;top:9px;font:8px Georgia,"Times New Roman",serif;letter-spacing:.17em;color:#766f64}
@@ -242,6 +283,13 @@ button,a{font:inherit}
 .submit{width:100%;border:0;background:#52564f;color:#fff;padding:13px;cursor:pointer}
 .guest-card{text-align:left;border-bottom:1px solid var(--line);padding:15px 0}
 .guest-card strong{font-size:12px}.guest-card p{font-size:12px;color:#60645e;line-height:1.7;margin:5px 0}.guest-card small{font-size:10px;color:#999}
+.guest-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.guest-delete{display:none;border:0;background:transparent;color:#a36b66;font-size:10px;cursor:pointer;padding:3px 0}
+.guestbook.admin-mode .guest-delete{display:inline-block}
+.guest-admin{margin-top:18px;text-align:right}
+.guest-admin button{border:0;background:transparent;color:#aaa69f;font-size:9px;cursor:pointer;padding:4px}
+.guest-empty{font-size:11px;color:#999;padding:18px 0;border-bottom:1px solid var(--line)}
+.guestbook-form .submit:disabled{opacity:.6;cursor:default}
 .note{font-size:10px;color:#92958f;line-height:1.6;margin-top:16px}
 
 .ending{position:relative;padding:0;background:var(--paper2);overflow:hidden}
@@ -253,227 +301,316 @@ button,a{font:inherit}
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#222;color:#fff;padding:9px 13px;font-size:11px;opacity:0;pointer-events:none;transition:.2s;z-index:70}
 .toast.show{opacity:1}
 @media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}.music-btn.playing{animation:none}}
+
+
+/* ===== v16 reference-based layout overrides ===== */
+.poster-copy .venue-meta{
+  margin-top:8px;font-family:"Noto Sans KR",sans-serif;font-size:12px;
+  letter-spacing:.06em;font-weight:500;line-height:1.7
+}
+.music-btn{
+  position:fixed !important;
+  z-index:80 !important;
+  top:max(16px, env(safe-area-inset-top)) !important;
+  right:max(16px, calc((100vw - 480px)/2 + 16px)) !important;
+  width:44px !important;height:44px !important;
+  border:0 !important;background:rgba(46,47,44,.58) !important;
+  color:#fff !important;font-size:17px;font-weight:500;
+  line-height:1;display:grid;place-items:center;
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px)
+}
+.music-btn.playing{animation:none}
+
+.day{background:#f7f6f2}
+.day .date-big{font-size:30px;margin-top:6px}
+.day-sub{font-size:12px;color:#5d615a;line-height:1.8}
+.calendar{margin-top:32px;padding:22px 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cal-head div:first-child,.cal-grid .cal-cell:nth-child(7n+1){color:var(--red)}
+.cal-cell{min-height:42px;font-size:12px}
+.countdown-wrap{margin-top:30px}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:310px;margin:0 auto}
+.count-unit{padding:8px 2px 10px;text-align:center}
+.count-label{font:9px Georgia,"Times New Roman",serif;letter-spacing:.16em;color:#9b9c97;margin-bottom:7px}
+.count-value{font-family:"Gowun Batang",serif;font-size:24px;color:#50534e;font-variant-numeric:tabular-nums}
+.count-sep{display:none}
+.countdown-message{margin-top:24px;font-family:"Gowun Batang",serif;font-size:14px;line-height:1.8;color:#555a54}
+.countdown-message strong{color:var(--red);font-weight:700}
+
+.location-section{text-align:center}
+.location-name{font-family:"Gowun Batang",serif;font-weight:700;font-size:18px;margin:4px 0 8px}
+.location-address{font-size:12px;line-height:1.8;color:#6b6f68}
+.mapbox.official{padding:0;overflow:hidden;background:#fff;border:1px solid var(--line);margin-top:28px}
+.mapbox.official img{width:100%;height:auto;display:block}
+.map-caption{font-size:9px;color:#999;margin-top:7px;text-align:right}
+.maplinks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+.maplinks a{border-radius:2px;background:#fff}
+.transport{margin-top:30px}
+.transport-block{padding:18px 0;border-top:1px solid var(--line)}
+.transport-block:first-child{border-top:0;padding-top:0}
+.transport h4{font-family:"Gowun Batang",serif;font-size:16px;letter-spacing:0;margin:0 0 10px;color:#3c403a}
+.transport p{font-size:12px;line-height:1.9;color:#626760}
+.transport .bus-lines{margin-top:6px}
+.transport strong{font-weight:600;color:#444942}
+.parking-box{margin-top:8px;padding:16px 16px;background:#f3efe7;border:1px solid rgba(70,60,50,.12)}
+.parking-box p{margin:0 0 5px}.parking-box p:last-child{margin-bottom:0}
+.venue-tel{display:inline-block;margin-top:20px;font-size:11px;color:#777;text-decoration:none;border-bottom:1px solid #aaa;padding-bottom:2px}
+
+.contact-unified{text-align:center;background:#f8f6f0}
+.contact-intro{font-size:12px;line-height:1.8;color:#6a6d67;margin-bottom:24px}
+.contact-side{margin-top:24px}
+.contact-side-title{font-family:"Gowun Batang",serif;font-size:18px;margin:28px 0 10px;text-align:left}
+.contact-card{border:1px solid var(--line);background:#fff;margin-top:8px;padding:14px;text-align:left}
+.contact-top{display:flex;align-items:center;gap:10px}
+.contact-person{flex:1;min-width:0}
+.contact-person strong{display:block;font-size:12px}
+.contact-person small{display:block;font-size:10px;color:#8b8e88;margin-top:3px}
+.contact-actions{display:flex;gap:5px;flex-wrap:nowrap}
+.contact-actions a,.contact-actions button{height:32px;min-width:38px;padding:0 8px;border:1px solid var(--line);border-radius:16px;background:#faf9f5;color:#555a54;display:grid;place-items:center;text-decoration:none;font-size:10px;cursor:pointer;white-space:nowrap}
+.contact-actions .account-btn{color:var(--red)}
+.account-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.contact-card.open .account-detail{display:block}
+.account-line{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;color:#62665f}
+.account-line span{min-width:0;white-space:normal}
+.account-line button{flex:0 0 auto;border:1px solid var(--line);border-radius:14px;background:#faf9f5;font-size:10px;color:var(--red);padding:5px 9px;cursor:pointer}
+
+/* Keep the photo story visually separate after practical information. */
+.moments{background:var(--paper2);padding-top:88px}
+.gallery{padding-top:88px}
+
+@media(max-width:360px){
+  .contact-actions a,.contact-actions button{min-width:34px;padding:0 6px;font-size:9px}
+  .count-value{font-size:21px}
+}
 </style>
 </head>
 <body>
+<audio id="bgm" autoplay="autoplay" loop="loop" playsinline="playsinline" webkit-playsinline="true" preload="auto">
+<source src="bgm.mp3" type="audio/mpeg"/>
+<source src="bgm.m4a" type="audio/mp4"/>
+</audio>
+<script>
+/* Start the BGM as early as the browser allows. Browsers may still block audible autoplay. */
+(function(){
+  const a=document.getElementById("bgm");
+  if(!a) return;
+  a.volume=.35;
+  a.muted=false;
+  a.autoplay=true;
+  const start=()=>{
+    try{
+      const p=a.play();
+      if(p && typeof p.catch==="function") p.catch(()=>{});
+    }catch(e){}
+  };
+  window.__earlyBgmStart=start;
+  start();
+  a.addEventListener("loadeddata",start,{once:true});
+  a.addEventListener("canplay",start,{once:true});
+  a.addEventListener("canplaythrough",start,{once:true});
+})();
+</script>
 <main class="page">
 
-<section class="cover">
-  <div class="poster">
-    <img src="images/JIN02912_web.jpg" alt="웨딩 커버">
-    <button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="배경음악 재생">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5Z"/><path d="M17 9c1.2 1.6 1.2 4.4 0 6"/><path d="M19.5 6.8c2.6 2.8 2.6 7.6 0 10.4"/></svg>
-    </button>
-    <div class="poster-copy">
-      <div class="mini">THE WEDDING OF</div>
-      <h1>저희, 결혼합니다.</h1>
-      <div class="names-top">박광현 그리고 윤에스더<br>2026. 12. 05</div>
-    </div>
-  </div>
-</section>
 
-<section class="section invitation fade">
-  <div class="kicker">INVITATION</div>
-  <h2 class="title">초대합니다</h2>
-  <div class="copy">
-    오랜 시간 서로의 일상에 머물며<br>
-    기쁜 날도 평범한 날도 함께해왔습니다.<br><br>
-    이제 부부로서 새로운 시작을 하려 합니다.<br>
+
+
+
+
+
+
+
+
+
+<section class="cover">
+<div class="poster">
+<img alt="웨딩 커버" src="images/JIN02912_web.jpg"/>
+<button aria-label="배경음악 재생" class="music-btn" id="musicBtn" onclick="toggleMusic()">▶</button>
+<div class="poster-copy">
+<div class="mini">THE WEDDING OF</div>
+<h1>저희, 결혼합니다.</h1>
+<div class="names-top">박광현 그리고 윤에스더<br/>2026. 12. 05</div><div class="venue-meta">KU컨벤션웨딩홀 · 오전 11:00</div>
+</div>
+</div>
+</section><section class="section invitation fade">
+<div class="kicker">INVITATION</div>
+<h2 class="title">초대합니다</h2>
+<div class="copy">
+    오랜 시간 서로의 일상에 머물며<br/>
+    기쁜 날도 평범한 날도 함께해왔습니다.<br/><br/>
+    이제 부부로서 새로운 시작을 하려 합니다.<br/>
     귀한 걸음으로 함께해 주시면 감사하겠습니다.
   </div>
-  <div class="parents">
-    박균일 · 안현선의 아들 <strong>박광현</strong><br>
+<div class="parents">
+    박균일 · 안현선의 아들 <strong>박광현</strong><br/>
     윤정관 · 이경자의 딸 <strong>윤에스더</strong>
-  </div>
-
-</section>
-
-
-<section class="moments">
-  <div class="moments-head fade">
-    <div class="kicker">OUR MOMENTS</div>
-    <h2 class="title">우리의 순간</h2>
-  </div>
-
-  <div class="magazine">
-    <!-- 3060 / 3070 / 3076 / 3088 : magazine spread -->
-    <div class="mag-spread fade">
-      <img class="a" src="images/JIN03060_web.jpg" alt="">
-      <img class="b" src="images/JIN03070_web.jpg" alt="">
-      <img class="c" src="images/JIN03076_web.jpg" alt="">
-      <img class="d" src="images/JIN03088_web.jpg" alt="">
-      <div class="mag-note top">서로에게 한 걸음씩,<br>그리고 조금 더 가까이.</div>
-    </div>
-
-    <div class="feature-pair fade">
-      <img src="images/JIN02777_web.jpg" alt="">
-      <img src="images/JIN02425_web.jpg" alt="">
-    </div>
-
-    <!-- 2572 / 2587 / 2597 : uneven triptych -->
-    <div class="strip3 fade">
-      <img src="images/JIN02572_web.jpg" alt="">
-      <img src="images/JIN02587_web.jpg" alt="">
-      <img src="images/JIN02597_web.jpg" alt="">
-    </div>
-    <div class="vow-card fade">서로의 비를 막아주고,<br>햇살은 함께 나누겠습니다.</div>
-
-    <!-- 3919 / 3922 / 3930 : dynamic sequence -->
-    <div class="sequence-mag fade">
-      <div class="sequence-story">좋은 날도 평범한 날도,<br>함께 같은 방향으로.</div>
-      <img src="images/JIN03919_web.jpg" alt="">
-      <img src="images/JIN03922_web.jpg" alt="">
-      <img src="images/JIN03930_web.jpg" alt="">
-    </div>
-
-    <div class="feature-pair fade">
-      <img src="images/JIN04076_web.jpg" alt="">
-      <img src="images/JIN04049_web.jpg" alt="">
-    </div>
-
-    <figure class="poster-vow fade">
-      <img src="images/JIN04186_web.jpg" alt="함께 손을 잡은 두 사람">
-      <div class="poster-vow-copy">앞으로의 모든 계절을,<br>함께.</div>
-      <div class="poster-date">DEC. 05, 2026</div>
-    </figure>
-
-    <figure class="hero-shot right fade">
-      <img src="images/JIN02121_web.jpg" alt="우산 아래 마주보며 웃는 두 사람">
-      <figcaption class="vow-card">지금처럼 웃으며,<br>행복하게 잘 살겠습니다.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="gallery fade">
-  <div class="kicker">MORE OF US</div>
-  <h2 class="title">그리고, 우리의 기록</h2>
-  <div class="gallery-grid" id="galleryGrid"></div>
-  <button class="more-btn" onclick="openGallery(0)">사진 더보기 +</button>
-</section>
-
-<section class="section day fade">
-  <div class="kicker">WEDDING DAY</div>
-  <h2 class="title">예식 안내</h2>
-  <div class="date-big">2026. 12. 05</div>
-  <div style="font-size:12px">토요일 오전 11시 · KU 웨딩홀</div>
-  <div class="calendar">
-    <div class="cal-head"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
-    <div class="cal-grid">
-      <div></div><div></div><div class="cal-cell"><span>1</span></div><div class="cal-cell"><span>2</span></div><div class="cal-cell"><span>3</span></div><div class="cal-cell"><span>4</span></div><div class="cal-cell wedding"><span>5</span></div>
-      <div class="cal-cell"><span>6</span></div><div class="cal-cell"><span>7</span></div><div class="cal-cell"><span>8</span></div><div class="cal-cell"><span>9</span></div><div class="cal-cell"><span>10</span></div><div class="cal-cell"><span>11</span></div><div class="cal-cell"><span>12</span></div>
-      <div class="cal-cell"><span>13</span></div><div class="cal-cell"><span>14</span></div><div class="cal-cell"><span>15</span></div><div class="cal-cell"><span>16</span></div><div class="cal-cell"><span>17</span></div><div class="cal-cell"><span>18</span></div><div class="cal-cell"><span>19</span></div>
-      <div class="cal-cell"><span>20</span></div><div class="cal-cell"><span>21</span></div><div class="cal-cell"><span>22</span></div><div class="cal-cell"><span>23</span></div><div class="cal-cell"><span>24</span></div><div class="cal-cell"><span>25</span></div><div class="cal-cell"><span>26</span></div>
-      <div class="cal-cell"><span>27</span></div><div class="cal-cell"><span>28</span></div><div class="cal-cell"><span>29</span></div><div class="cal-cell"><span>30</span></div><div class="cal-cell"><span>31</span></div>
-    </div>
-  </div>
-  <div class="countdown" id="countdown">D-DAY</div>
-</section>
-
-<section class="section fade">
-  <div class="kicker">LOCATION</div>
-  <h2 class="title">오시는 길</h2>
-  <div class="copy">서울특별시 광진구 아차산로36길 5<br>건국대학교 동문회관 KU 웨딩홀</div>
-
-  <div class="mapbox">
-    <svg viewBox="0 0 420 280" role="img" aria-label="KU 웨딩홀 약도">
-      <rect width="420" height="280" fill="#f8f6f0"/>
-      <path d="M35 205 H385" stroke="#7c876e" stroke-width="16" opacity=".28"/>
-      <text x="230" y="198" font-size="12" fill="#596057">아차산로</text>
-      <path d="M110 205 V90" stroke="#9e9b8f" stroke-width="7" opacity=".5"/>
-      <path d="M110 118 H320" stroke="#9e9b8f" stroke-width="6" opacity=".45"/>
-      <path d="M275 118 V65" stroke="#9e9b8f" stroke-width="5" opacity=".42"/>
-      <rect x="245" y="54" width="105" height="58" rx="8" fill="#e8e3d8" stroke="#bfb8a8"/>
-      <text x="297" y="78" text-anchor="middle" font-size="12" fill="#4f554f">건국대학교</text>
-      <text x="297" y="95" text-anchor="middle" font-size="10" fill="#73786f">동문회관</text>
-      <circle cx="275" cy="118" r="9" fill="#9e463f"/>
-      <path d="M275 115 C266 101 250 107 250 119 C250 132 275 145 275 145 C275 145 300 132 300 119 C300 107 284 101 275 115Z" fill="#9e463f" opacity=".22"/>
-      <text x="306" y="134" font-size="13" font-weight="700" fill="#314438">KU 웨딩홀</text>
-      <circle cx="72" cy="205" r="22" fill="#8ba164"/>
-      <text x="72" y="201" text-anchor="middle" font-size="10" fill="#fff">2·7</text>
-      <text x="72" y="216" text-anchor="middle" font-size="8" fill="#fff">건대입구</text>
-      <text x="62" y="246" font-size="11" fill="#4f554f">5번 출구</text>
-      <path d="M88 190 C130 160 180 145 246 125" stroke="#9e463f" stroke-width="2.5" fill="none" stroke-dasharray="5 5"/>
-      <text x="142" y="167" font-size="10" fill="#9e463f">도보 약 5분</text>
-    </svg>
-  </div>
-
-  <div class="transport">
-    <h4>지하철</h4>
-    <p>2호선 건대입구역 5번 출구 · 7호선 건대입구역 4번 출구에서 도보 약 5분</p>
-    <h4>버스</h4>
-    <p>건국대학교앞 또는 건대입구역 정류장 하차</p>
-    <h4>자가용 · 주차</h4>
-    <p>내비게이션에 “KU 웨딩홀” 또는 “건국대학교 동문회관” 검색. 전용주차장 및 지정 주차장을 이용해 주세요.</p>
-  </div>
-  <div class="maplinks">
-    <a href="https://map.naver.com/p/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" target="_blank">네이버 지도</a>
-    <a href="https://map.kakao.com/link/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" target="_blank">카카오맵</a>
-  </div>
-</section>
-
-<section class="section fade">
-  <div class="kicker">CONTACT</div>
-  <h2 class="title">연락처</h2>
-  <div class="icon-list">
-    <div class="row"><div class="row-main"><strong>신랑 박광현</strong><small>010-8705-0859</small></div><a class="round-icon" href="tel:01087050859">☎</a><a class="round-icon" href="sms:01087050859">✉</a></div>
-    <div class="row"><div class="row-main"><strong>신부 윤에스더</strong><small>010-7538-4558</small></div><a class="round-icon" href="tel:01075384558">☎</a><a class="round-icon" href="sms:01075384558">✉</a></div>
-  </div>
-</section>
-
-
-<section class="section fade">
-  <div class="kicker">ACCOUNT</div>
-  <h2 class="title">마음 전하실 곳</h2>
-  <div class="copy" style="font-size:12px;line-height:1.8;margin-bottom:20px">
-    참석이 어려우시거나 마음을 전하고 싶은 분들을 위해<br>
-    계좌번호를 안내드립니다.
-  </div>
-
-  <div class="account"><strong>신랑 · 박광현</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-  <div class="account"><strong>신랑 아버지 · 박균일</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-  <div class="account"><strong>신랑 어머니 · 안현선</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-<div class="account-group-gap"></div>
-  <div class="account"><strong>신부 · 윤에스더</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-  <div class="account"><strong>신부 아버지 · 윤정관</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-  <div class="account"><strong>신부 어머니 · 이경자</strong><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')" aria-label="계좌번호 복사">복사 ⧉</button></div></div>
-</section>
-
-<section class="section guestbook fade">
-  <div class="kicker">GUESTBOOK</div>
-  <h2 class="title">따뜻한 마음</h2>
-  <div class="copy">두 사람에게 축하의 메시지를 남겨주세요.</div>
-  <div class="guestbook-form">
-    <input id="guestName" placeholder="이름">
-    <input id="guestPw" type="password" placeholder="비밀번호">
-    <textarea id="guestMessage" placeholder="축하의 마음을 남겨주세요."></textarea>
-    <button class="submit" onclick="addGuestbook()">등록하기</button>
-  </div>
-  <div id="guestList">
-    <div class="guest-card"><strong>미리보기</strong><p>두 분의 결혼을 진심으로 축하합니다!</p><small>2026.12.05</small></div>
-  </div>
-  <div class="note">현재는 화면 미리보기용입니다. 실제 방명록 저장 기능은 배포 단계에서 데이터베이스를 연결하면 됩니다.</div>
-</section>
-
-<section class="ending fade">
-  <img src="images/JIN03977_web.jpg" alt="웨딩 엔딩 사진">
-  <div class="ending-copy"><div>See you<br>on our day.</div></div>
-</section>
-<div class="footer">박광현 그리고 윤에스더<br>2026. 12. 05</div>
-</main>
-
-<audio id="bgm" preload="metadata" loop playsinline>
-  <source src="bgm.mp3" type="audio/mpeg">
-  <source src="bgm.m4a" type="audio/mp4">
-</audio>
-
+</div>
+</section><section class="section day fade">
+<div class="kicker">WEDDING DAY</div>
+<h2 class="title">예식 안내</h2>
+<div class="date-big">2026. 12. 05</div>
+<div class="day-sub">토요일 오전 11시<br/>KU컨벤션웨딩홀</div>
+<div aria-label="2026년 12월 달력" class="calendar">
+<div class="cal-head"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div>
+<div class="cal-grid">
+<div></div><div></div><div class="cal-cell"><span>1</span></div><div class="cal-cell"><span>2</span></div><div class="cal-cell"><span>3</span></div><div class="cal-cell"><span>4</span></div><div class="cal-cell wedding"><span>5</span></div>
+<div class="cal-cell"><span>6</span></div><div class="cal-cell"><span>7</span></div><div class="cal-cell"><span>8</span></div><div class="cal-cell"><span>9</span></div><div class="cal-cell"><span>10</span></div><div class="cal-cell"><span>11</span></div><div class="cal-cell"><span>12</span></div>
+<div class="cal-cell"><span>13</span></div><div class="cal-cell"><span>14</span></div><div class="cal-cell"><span>15</span></div><div class="cal-cell"><span>16</span></div><div class="cal-cell"><span>17</span></div><div class="cal-cell"><span>18</span></div><div class="cal-cell"><span>19</span></div>
+<div class="cal-cell"><span>20</span></div><div class="cal-cell"><span>21</span></div><div class="cal-cell"><span>22</span></div><div class="cal-cell"><span>23</span></div><div class="cal-cell"><span>24</span></div><div class="cal-cell"><span>25</span></div><div class="cal-cell"><span>26</span></div>
+<div class="cal-cell"><span>27</span></div><div class="cal-cell"><span>28</span></div><div class="cal-cell"><span>29</span></div><div class="cal-cell"><span>30</span></div><div class="cal-cell"><span>31</span></div>
+</div>
+</div>
+<div aria-live="polite" class="countdown-wrap">
+<div class="countdown-grid">
+<div class="count-unit"><div class="count-label">DAYS</div><div class="count-value" id="countDays">00</div></div>
+<div class="count-unit"><div class="count-label">HOUR</div><div class="count-value" id="countHours">00</div></div>
+<div class="count-unit"><div class="count-label">MIN</div><div class="count-value" id="countMinutes">00</div></div>
+<div class="count-unit"><div class="count-label">SEC</div><div class="count-value" id="countSeconds">00</div></div>
+</div>
+<div class="countdown-message" id="countdownMessage"></div>
+</div>
+</section><section class="section location-section fade">
+<div class="kicker">LOCATION</div>
+<h2 class="title">오시는 길</h2>
+<div class="location-name">KU컨벤션웨딩홀</div>
+<div class="location-address">서울특별시 광진구 아차산로36길 5<br/>건국대학교동문회관 KU컨벤션웨딩홀</div>
+<div class="mapbox official">
+<img alt="KU컨벤션웨딩홀 공식 약도" src="images/ku_location_map.jpg"/>
+</div>
+<div class="map-caption">KU컨벤션웨딩홀 공식 약도</div>
+<div class="maplinks">
+<a href="https://map.naver.com/p/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" rel="noopener" target="_blank">네이버 지도</a>
+<a href="https://map.kakao.com/link/search/KU%EC%BB%A8%EB%B2%A4%EC%85%98%EC%9B%A8%EB%94%A9%ED%99%80" rel="noopener" target="_blank">카카오맵</a>
+</div>
+<div class="transport">
+<div class="transport-block">
+<h4>지하철</h4>
+<p><strong>2호선 건대입구역 5번 출구</strong> · 도보 5분 이내<br/><strong>7호선 건대입구역 4번 출구</strong> · 도보 5분 이내</p>
+</div>
+<div class="transport-block">
+<h4>버스</h4>
+<p>건국대학교앞 또는 건대입구역 정류장 하차</p>
+<p class="bus-lines"><strong>간선</strong> 240, 721<br/><strong>지선</strong> 2222, 2224, 3217, 3220, 4212<br/><strong>마을</strong> 광진05<br/><strong>공항</strong> 6013 (광진구의회 하차)</p>
+</div>
+<div class="transport-block">
+<h4>자가용</h4>
+<p>내비게이션에 <strong>“KU컨벤션웨딩홀”</strong> 또는 <strong>“건국대학교동문회관”</strong>을 검색해 주세요.<br/>주소 검색 시 <strong>서울 광진구 아차산로36길 5</strong>를 입력해 주세요.</p>
+</div>
+<div class="transport-block">
+<h4>주차</h4>
+<div class="parking-box">
+<p>KU컨벤션웨딩홀 전용주차장 <strong>2시간 무료</strong></p>
+<p>건대 수의과대학 주차장 <strong>2시간 무료</strong></p>
+<p>현장 주차요원의 안내를 받아 주세요.</p>
+</div>
+</div>
+</div>
+<a class="venue-tel" href="tel:024477005">웨딩홀 02-447-7005</a>
+</section><section class="section contact-unified fade">
+<div class="kicker">CONTACT &amp; ACCOUNT</div>
+<h2 class="title">연락 및 마음 전하실 곳</h2>
+<div class="contact-intro">축하의 연락을 전하시거나<br/>마음을 전하실 분을 선택해 주세요.</div>
+<div class="contact-side">
+<div class="contact-side-title">신랑측</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신랑 · 박광현</strong><small>010-8705-0859</small></div><div class="contact-actions"><a href="tel:01087050859">전화</a><a href="sms:01087050859">문자</a><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신랑 아버지 · 박균일</strong></div><div class="contact-actions"><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신랑 어머니 · 안현선</strong></div><div class="contact-actions"><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+<div class="contact-side-title">신부측</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신부 · 윤에스더</strong><small>010-7538-4558</small></div><div class="contact-actions"><a href="tel:01075384558">전화</a><a href="sms:01075384558">문자</a><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신부 아버지 · 윤정관</strong></div><div class="contact-actions"><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+<div class="contact-card">
+<div class="contact-top"><div class="contact-person"><strong>신부 어머니 · 이경자</strong></div><div class="contact-actions"><button class="account-btn" onclick="toggleAccount(this)">계좌</button></div></div>
+<div class="account-detail"><div class="account-line"><span>신한은행 · 123-456-789101</span><button onclick="copyText('123-456-789101')">복사</button></div></div>
+</div>
+</div>
+</section><section class="moments">
+<div class="moments-head fade">
+<div class="kicker">OUR MOMENTS</div>
+<h2 class="title">우리의 순간</h2>
+</div>
+<div class="magazine">
+<!-- 3060 / 3070 / 3076 / 3088 : magazine spread -->
+<div class="mag-spread fade">
+<img alt="" class="a" src="images/JIN03060_web.jpg"/>
+<img alt="" class="b" src="images/JIN03070_web.jpg"/>
+<img alt="" class="c" src="images/JIN03076_web.jpg"/>
+<img alt="" class="d" src="images/JIN03088_web.jpg"/>
+<div class="mag-note top">서로에게 한 걸음씩,<br/>그리고 조금 더 가까이.</div>
+</div>
+<div class="feature-pair fade">
+<img alt="" src="images/JIN02777_web.jpg"/>
+<img alt="" src="images/JIN02425_web.jpg"/>
+</div>
+<!-- 2572 / 2587 / 2597 : uneven triptych -->
+<div class="strip3 fade">
+<img alt="" src="images/JIN02572_web.jpg"/>
+<img alt="" src="images/JIN02587_web.jpg"/>
+<img alt="" src="images/JIN02597_web.jpg"/>
+</div>
+<div class="vow-card fade">서로의 비를 막아주고,<br/>햇살은 함께 나누겠습니다.</div>
+<!-- 3919 / 3922 / 3930 : dynamic sequence -->
+<div class="sequence-mag fade">
+<div class="sequence-story">좋은 날도 평범한 날도,<br/>함께 같은 방향으로.</div>
+<img alt="" src="images/JIN03919_web.jpg"/>
+<img alt="" src="images/JIN03922_web.jpg"/>
+<img alt="" src="images/JIN03930_web.jpg"/>
+</div>
+<div class="feature-pair umbrella-pair fade">
+<div class="umbrella-card left"><img alt="우산을 든 신랑" src="images/JIN04049_web.jpg"/></div>
+<div class="umbrella-card right"><img alt="우산을 든 신부" src="images/JIN04076_web.jpg"/></div>
+</div>
+<figure class="poster-vow fade">
+<img alt="함께 손을 잡은 두 사람" src="images/JIN04186_web.jpg"/>
+<div class="poster-vow-copy">앞으로의 모든 계절을,<br/>함께.</div>
+<div class="poster-date">DEC. 05, 2026</div>
+</figure>
+<figure class="hero-shot right fade">
+<img alt="우산 아래 마주보며 웃는 두 사람" src="images/JIN02121_web.jpg"/>
+<figcaption class="vow-card">지금처럼 웃으며,<br/>행복하게 잘 살겠습니다.</figcaption>
+</figure>
+</div>
+</section><section class="gallery fade">
+<div class="kicker">MORE OF US</div>
+<h2 class="title">그리고, 우리의 기록</h2>
+<div class="gallery-grid" id="galleryGrid"></div>
+<button class="more-btn" onclick="openGallery(0)">사진 더보기 +</button>
+</section><section class="section guestbook fade">
+<div class="kicker">GUESTBOOK</div>
+<h2 class="title">따뜻한 마음</h2>
+<div class="copy">두 사람에게 축하의 메시지를 남겨주세요.</div>
+<div class="guestbook-form">
+<input id="guestName" maxlength="30" placeholder="이름"/>
+<textarea id="guestMessage" maxlength="500" placeholder="축하의 마음을 남겨주세요."></textarea>
+<button class="submit" id="guestSubmit" onclick="addGuestbook()">등록하기</button>
+</div>
+<div id="guestList"><div class="guest-empty">방명록을 불러오는 중입니다.</div></div>
+<div class="guest-admin"><button id="adminBtn" onclick="toggleGuestbookAdmin()">관리</button></div>
+<div class="note">남겨주신 축하 메시지는 두 사람의 소중한 기록으로 보관됩니다.</div>
+</section><section class="ending fade">
+<img alt="웨딩 엔딩 사진" src="images/JIN03977_web.jpg"/>
+<div class="ending-copy"><div>See you<br/>on our day.</div></div>
+</section><div class="footer">박광현 그리고 윤에스더<br/>2026. 12. 05</div></main>
 <div class="modal" id="modal">
-  <button class="modal-close" onclick="closeGallery()">×</button>
-  <button class="modal-prev" onclick="moveGallery(-1)">‹</button>
-  <img id="modalImg" alt="">
-  <button class="modal-next" onclick="moveGallery(1)">›</button>
+<button class="modal-close" onclick="closeGallery()">×</button>
+<button class="modal-prev" onclick="moveGallery(-1)">‹</button>
+<img alt="" id="modalImg"/>
+<button class="modal-next" onclick="moveGallery(1)">›</button>
 </div>
 <div class="toast" id="toast"></div>
-
 <script>
 const allGallery=[
 "JIN03428_web.jpg","JIN03516_web.jpg","JIN03638_web.jpg","JIN03894_web.jpg",
@@ -483,48 +620,340 @@ const allGallery=[
 ];
 const grid=document.getElementById("galleryGrid");
 allGallery.slice(0,9).forEach((f,i)=>{
- const b=document.createElement("button");
- b.innerHTML=`<img src="images/${f}" alt="갤러리 사진 ${i+1}">`;
- b.onclick=()=>openGallery(i);
- grid.appendChild(b);
+  const b=document.createElement("button");
+  b.type="button";
+  b.innerHTML=`<img src="images/${f}" alt="갤러리 사진 ${i+1}">`;
+  b.onclick=()=>openGallery(i);
+  grid.appendChild(b);
 });
 let galleryIndex=0;
-function openGallery(i){galleryIndex=i;document.getElementById("modalImg").src="images/"+allGallery[i];document.getElementById("modal").classList.add("open");}
-function closeGallery(){document.getElementById("modal").classList.remove("open");}
-function moveGallery(d){galleryIndex=(galleryIndex+d+allGallery.length)%allGallery.length;document.getElementById("modalImg").src="images/"+allGallery[galleryIndex];}
+function openGallery(i){
+  galleryIndex=i;
+  document.getElementById("modalImg").src="images/"+allGallery[i];
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeGallery(){
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow="";
+}
+function moveGallery(d){
+  galleryIndex=(galleryIndex+d+allGallery.length)%allGallery.length;
+  document.getElementById("modalImg").src="images/"+allGallery[galleryIndex];
+}
+document.addEventListener("keydown",e=>{
+  if(!document.getElementById("modal").classList.contains("open")) return;
+  if(e.key==="Escape") closeGallery();
+  if(e.key==="ArrowLeft") moveGallery(-1);
+  if(e.key==="ArrowRight") moveGallery(1);
+});
 
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}}),{threshold:.12});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target);}
+}),{threshold:.12});
 document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
 const wedding=new Date("2026-12-05T11:00:00+09:00");
-const days=Math.max(0,Math.ceil((wedding-new Date())/86400000));
-document.getElementById("countdown").textContent=days===0?"TODAY":`D-${days}`;
+const countDays=document.getElementById("countDays");
+const countHours=document.getElementById("countHours");
+const countMinutes=document.getElementById("countMinutes");
+const countSeconds=document.getElementById("countSeconds");
+const countdownMessage=document.getElementById("countdownMessage");
+const pad2=n=>String(n).padStart(2,"0");
+function updateCountdown(){
+  const now=new Date();
+  const raw=wedding.getTime()-now.getTime();
+  const before=raw>0;
+  const elapsed=Math.abs(raw);
+  const days=Math.floor(elapsed/86400000);
+  const hours=Math.floor((elapsed%86400000)/3600000);
+  const mins=Math.floor((elapsed%3600000)/60000);
+  const secs=Math.floor((elapsed%60000)/1000);
+  countDays.textContent=String(days).padStart(2,"0");
+  countHours.textContent=pad2(hours);
+  countMinutes.textContent=pad2(mins);
+  countSeconds.textContent=pad2(secs);
+  const parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(now);
+  const values=Object.fromEntries(parts.filter(p=>p.type!=="literal").map(p=>[p.type,p.value]));
+  const todayUTC=Date.UTC(Number(values.year),Number(values.month)-1,Number(values.day));
+  const weddingDayUTC=Date.UTC(2026,11,5);
+  const calendarDays=Math.round((weddingDayUTC-todayUTC)/86400000);
+  if(calendarDays>0){
+    countdownMessage.innerHTML=`광현 <span aria-hidden="true">♥</span> 에스더의 결혼식까지 <strong>${calendarDays}일</strong> 남았습니다.`;
+  }else if(calendarDays===0){
+    countdownMessage.innerHTML=`오늘, 광현 <span aria-hidden="true">♥</span> 에스더가 결혼합니다.`;
+  }else{
+    countdownMessage.innerHTML=`광현 <span aria-hidden="true">♥</span> 에스더가 결혼한 지 <strong>${Math.abs(calendarDays)}일</strong> 되었습니다.`;
+  }
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
 
-function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1600);}
-async function copyText(t){try{await navigator.clipboard.writeText(t);toast("복사했습니다.");}catch(e){prompt("복사해주세요.",t);}}
+function toast(msg){
+  const t=document.getElementById("toast");
+  t.textContent=msg;t.classList.add("show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer=setTimeout(()=>t.classList.remove("show"),1600);
+}
+function toggleAccount(btn){
+  const card=btn.closest(".contact-card");
+  if(card) card.classList.toggle("open");
+}
+async function copyText(text){
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(text);
+    }else{
+      const ta=document.createElement("textarea");
+      ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+      document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();
+    }
+    toast("계좌번호를 복사했습니다.");
+  }catch(e){
+    window.prompt("계좌번호를 복사해 주세요.",text);
+  }
+}
 
 const bgm=document.getElementById("bgm");
 const musicBtn=document.getElementById("musicBtn");
 bgm.volume=.35;
-async function toggleMusic(){
- try{
-   if(bgm.paused){await bgm.play();musicBtn.classList.add("playing");}
-   else{bgm.pause();musicBtn.classList.remove("playing");}
- }catch(e){console.error(e);toast("음악은 배포 주소에서 다시 확인해 주세요.");}
+bgm.muted=false;
+let userPaused=false;
+let interactionFallbackInstalled=false;
+
+function updateMusicButton(){
+  const playing=!bgm.paused && !bgm.ended;
+  musicBtn.textContent=playing?"Ⅱ":"▶";
+  musicBtn.classList.toggle("playing",playing);
+  musicBtn.setAttribute("aria-label",playing?"배경음악 일시정지":"배경음악 재생");
 }
 
-function addGuestbook(){
- const name=document.getElementById("guestName").value.trim();
- const msg=document.getElementById("guestMessage").value.trim();
- if(!name||!msg){toast("이름과 메시지를 입력해주세요.");return;}
- const card=document.createElement("div");card.className="guest-card";
- const today=new Date().toLocaleDateString("ko-KR");
- card.innerHTML=`<strong>${escapeHtml(name)}</strong><p>${escapeHtml(msg)}</p><small>${today}</small>`;
- document.getElementById("guestList").prepend(card);
- document.getElementById("guestName").value="";document.getElementById("guestMessage").value="";
- toast("미리보기 방명록에 등록했습니다.");
+async function playMusic(fromUser=false){
+  if(userPaused && !fromUser) return false;
+  try{
+    bgm.muted=false;
+    const result=bgm.play();
+    if(result && typeof result.then==="function") await result;
+    updateMusicButton();
+    if(!bgm.paused) removeFirstInteractionFallback();
+    return !bgm.paused;
+  }catch(e){
+    updateMusicButton();
+    return false;
+  }
 }
-function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
+
+async function toggleMusic(){
+  if(bgm.paused){
+    userPaused=false;
+    const ok=await playMusic(true);
+    if(!ok) toast("브라우저가 자동재생을 막고 있습니다. 화면을 한 번 터치해 주세요.");
+  }else{
+    userPaused=true;
+    bgm.pause();
+    updateMusicButton();
+  }
+}
+
+function firstInteraction(e){
+  if(userPaused) return;
+  if(e && e.target && e.target.closest && e.target.closest("#musicBtn")) return;
+  playMusic(true);
+}
+
+function installFirstInteractionFallback(){
+  if(interactionFallbackInstalled) return;
+  interactionFallbackInstalled=true;
+  document.addEventListener("pointerdown",firstInteraction,true);
+  document.addEventListener("touchstart",firstInteraction,{capture:true,passive:true});
+  document.addEventListener("click",firstInteraction,true);
+  document.addEventListener("keydown",firstInteraction,true);
+}
+
+function removeFirstInteractionFallback(){
+  if(!interactionFallbackInstalled) return;
+  interactionFallbackInstalled=false;
+  document.removeEventListener("pointerdown",firstInteraction,true);
+  document.removeEventListener("touchstart",firstInteraction,true);
+  document.removeEventListener("click",firstInteraction,true);
+  document.removeEventListener("keydown",firstInteraction,true);
+}
+
+function retryAutoplay(){
+  if(!userPaused && bgm.paused) playMusic(false);
+}
+
+bgm.addEventListener("play",updateMusicButton);
+bgm.addEventListener("pause",updateMusicButton);
+bgm.addEventListener("loadeddata",retryAutoplay,{once:true});
+bgm.addEventListener("canplay",retryAutoplay,{once:true});
+
+/* Try immediately, then again while the page settles. */
+if(window.__earlyBgmStart) window.__earlyBgmStart();
+playMusic(false).then(started=>{ if(!started) installFirstInteractionFallback(); });
+setTimeout(retryAutoplay,120);
+setTimeout(retryAutoplay,500);
+setTimeout(retryAutoplay,1200);
+
+window.addEventListener("DOMContentLoaded",()=>{
+  updateMusicButton();
+  retryAutoplay();
+  if(bgm.paused && !userPaused) installFirstInteractionFallback();
+});
+window.addEventListener("load",retryAutoplay,{once:true});
+window.addEventListener("pageshow",retryAutoplay);
+window.addEventListener("focus",retryAutoplay);
+document.addEventListener("visibilitychange",()=>{
+  if(document.visibilityState==="visible") retryAutoplay();
+});
+
+const SUPABASE_URL="https://cxobrkbbzssizquvvxbz.supabase.co";
+const SUPABASE_KEY="sb_publishable_hCqKM7N0dSkkOATX-RLj-Q_k68CuQrT";
+let guestbookAdminPassword="";
+const guestHeaders={
+  "apikey":SUPABASE_KEY,
+  "Authorization":"Bearer "+SUPABASE_KEY,
+  "Content-Type":"application/json"
+};
+
+async function loadGuestbook(){
+  const list=document.getElementById("guestList");
+  if(!list)return;
+  try{
+    const r=await fetch(
+      SUPABASE_URL+"/rest/v1/guestbook?select=id,name,message,created_at&order=created_at.desc",
+      {headers:guestHeaders}
+    );
+    if(!r.ok)throw new Error(await r.text());
+
+    const rows=await r.json();
+    if(!rows.length){
+      list.innerHTML='<div class="guest-empty">첫 번째 축하 메시지를 남겨주세요.</div>';
+      return;
+    }
+
+    list.innerHTML=rows.map(row=>{
+      const date=new Date(row.created_at).toLocaleDateString("ko-KR",{
+        year:"numeric",month:"2-digit",day:"2-digit"
+      });
+      return `<div class="guest-card">
+        <div class="guest-head">
+          <strong>${escapeHtml(row.name)}</strong>
+          <button class="guest-delete" onclick="deleteGuestbook(${Number(row.id)})">삭제</button>
+        </div>
+        <p>${escapeHtml(row.message).replace(/\\n/g,"<br>")}</p>
+        <small>${date}</small>
+      </div>`;
+    }).join("");
+  }catch(e){
+    console.error("guestbook load error",e);
+    list.innerHTML='<div class="guest-empty">방명록을 불러오지 못했습니다. 잠시 후 다시 확인해주세요.</div>';
+  }
+}
+
+async function addGuestbook(){
+  const name=document.getElementById("guestName").value.trim();
+  const msg=document.getElementById("guestMessage").value.trim();
+  const btn=document.getElementById("guestSubmit");
+
+  if(!name||!msg){
+    toast("이름과 메시지를 입력해 주세요.");
+    return;
+  }
+  if(name.length>30||msg.length>500){
+    toast("입력 길이를 확인해 주세요.");
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent="등록 중...";
+
+  try{
+    const r=await fetch(SUPABASE_URL+"/rest/v1/guestbook",{
+      method:"POST",
+      headers:{...guestHeaders,"Prefer":"return=minimal"},
+      body:JSON.stringify({name:name,message:msg})
+    });
+
+    if(!r.ok)throw new Error(await r.text());
+
+    document.getElementById("guestName").value="";
+    document.getElementById("guestMessage").value="";
+    await loadGuestbook();
+    toast("축하 메시지를 남겼습니다.");
+  }catch(e){
+    console.error("guestbook insert error",e);
+    toast("등록하지 못했습니다. 다시 시도해 주세요.");
+  }finally{
+    btn.disabled=false;
+    btn.textContent="등록하기";
+  }
+}
+
+function toggleGuestbookAdmin(){
+  const section=document.querySelector(".guestbook");
+  const btn=document.getElementById("adminBtn");
+
+  if(section.classList.contains("admin-mode")){
+    guestbookAdminPassword="";
+    section.classList.remove("admin-mode");
+    btn.textContent="관리";
+    return;
+  }
+
+  const pw=prompt("관리자 비밀번호를 입력해 주세요.");
+  if(!pw)return;
+
+  guestbookAdminPassword=pw;
+  section.classList.add("admin-mode");
+  btn.textContent="관리 종료";
+  toast("관리 모드입니다.");
+}
+
+async function deleteGuestbook(id){
+  if(!guestbookAdminPassword){
+    toast("관리자 인증이 필요합니다.");
+    return;
+  }
+  if(!confirm("이 방명록을 삭제할까요?"))return;
+
+  try{
+    const r=await fetch(SUPABASE_URL+"/rest/v1/rpc/delete_guestbook_entry",{
+      method:"POST",
+      headers:guestHeaders,
+      body:JSON.stringify({
+        entry_id:id,
+        admin_password:guestbookAdminPassword
+      })
+    });
+
+    if(!r.ok){
+      const text=await r.text();
+      if(text.includes("invalid admin password")){
+        guestbookAdminPassword="";
+        document.querySelector(".guestbook").classList.remove("admin-mode");
+        document.getElementById("adminBtn").textContent="관리";
+        toast("관리자 비밀번호가 올바르지 않습니다.");
+        return;
+      }
+      throw new Error(text);
+    }
+
+    await loadGuestbook();
+    toast("삭제했습니다.");
+  }catch(e){
+    console.error("guestbook delete error",e);
+    toast("삭제하지 못했습니다.");
+  }
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"']/g,m=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+document.addEventListener("DOMContentLoaded",loadGuestbook);
 </script>
 </body>
 </html>
