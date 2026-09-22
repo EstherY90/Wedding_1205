@@ -1,0 +1,45 @@
+name: Keep Supabase active
+
+on:
+  schedule:
+    # 매일 한국시간 낮 12시 (UTC 03:00)
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ping-database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query guestbook through Supabase REST API
+        env:
+          SUPABASE_URL: https://cxobrkbbzssizquvvxbz.supabase.co
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          test -n "$SUPABASE_PUBLISHABLE_KEY"
+          curl --fail-with-body --silent --show-error \
+            "$SUPABASE_URL/rest/v1/guestbook?select=id&limit=1" \
+            -H "apikey: $SUPABASE_PUBLISHABLE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_PUBLISHABLE_KEY" \
+            -H "Accept: application/json"
+
+      - name: Keep scheduled workflow enabled
+        if: ${{ github.event_name == 'schedule' && startsWith(github.event.schedule, '0 3') }}
+        run: |
+          if [ "$(date -u +%d)" != "01" ]; then
+            exit 0
+          fi
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git clone "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" repo
+          cd repo
+          mkdir -p .github
+          date -u +%Y-%m-%dT%H:%M:%SZ > .github/keepalive-last-run.txt
+          git add .github/keepalive-last-run.txt
+          git commit -m "chore: keep scheduled workflow active" || exit 0
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
